@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="install nginx1.取得最新版印象檔1docker pull nginx:latest  2.查看是否安裝成功1docker images  3.執行容器1docker run --name nginx-test -p 8080:80 -d nginx  –name nginx-test: 容器名稱 -p 8080:80: 將本地端的8080對應到容器內部的80 -d 把containe">
+  <meta name="description" content="install nginx1.取得最新版印象檔1docker pull nginx:latest  2.查看是否安裝成功1docker images">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用docker安裝nginx">
 <meta property="og:url" content="http://yoursite.com/2020/09/13/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%9Dnginx/index.html">
 <meta property="og:site_name" content="隨手筆記">
-<meta property="og:description" content="install nginx1.取得最新版印象檔1docker pull nginx:latest  2.查看是否安裝成功1docker images  3.執行容器1docker run --name nginx-test -p 8080:80 -d nginx  –name nginx-test: 容器名稱 -p 8080:80: 將本地端的8080對應到容器內部的80 -d 把containe">
+<meta property="og:description" content="install nginx1.取得最新版印象檔1docker pull nginx:latest  2.查看是否安裝成功1docker images">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-12T16:22:10.000Z">
-<meta property="article:modified_time" content="2020-09-20T07:04:26.813Z">
+<meta property="article:modified_time" content="2020-09-30T10:04:42.759Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -240,7 +240,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-20 15:04:26" itemprop="dateModified" datetime="2020-09-20T15:04:26+08:00">2020-09-20</time>
+        <time title="Modified: 2020-09-30 18:04:42" itemprop="dateModified" datetime="2020-09-30T18:04:42+08:00">2020-09-30</time>
       </span>
 
   
@@ -256,7 +256,7 @@
         <h1 id="install-nginx"><a href="#install-nginx" class="headerlink" title="install nginx"></a>install nginx</h1><h3 id="1-取得最新版印象檔"><a href="#1-取得最新版印象檔" class="headerlink" title="1.取得最新版印象檔"></a>1.取得最新版印象檔</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx:latest</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-查看是否安裝成功"><a href="#2-查看是否安裝成功" class="headerlink" title="2.查看是否安裝成功"></a>2.查看是否安裝成功</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-
+<a id="more"></a>
 <h3 id="3-執行容器"><a href="#3-執行容器" class="headerlink" title="3.執行容器"></a>3.執行容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name nginx-test -p 8080:80 -d nginx</span><br></pre></td></tr></table></figure>
 <ul>
 <li>–name nginx-test: 容器名稱</li>

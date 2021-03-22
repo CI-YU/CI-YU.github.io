@@ -46,6 +46,15 @@
 
   <title>隨手筆記</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=266453598"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '266453598');
+      }
+    </script>
 
 
 
@@ -156,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -196,6 +205,88 @@
       
 
       
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/13/Nuxt-js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bill huang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨手筆記">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/13/Nuxt-js/" class="post-title-link" itemprop="url">Nuxt.js</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-13 17:31:06" itemprop="dateCreated datePublished" datetime="2021-03-13T17:31:06+08:00">2021-03-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-14 12:22:57" itemprop="dateModified" datetime="2021-03-14T12:22:57+08:00">2021-03-14</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h2><p>devtools google 擴充套件<br>用途：debug vue<br>注意事項：需使用沒壓縮的vue檔案，nuxt使用的指令為 npm run dev才能進行除錯</p>
+<p>vue 3<br>用途：vue emmet</p>
+<p>vetur<br>用途：syntax highlighting、Snippet、auto completion、<br>emmet、Formatting</p>
+<h2 id="nuxt-目錄架構"><a href="#nuxt-目錄架構" class="headerlink" title="nuxt 目錄架構"></a>nuxt 目錄架構</h2><ul>
+<li>assets：專門放需要被 webpack 打包的資源，例如你的 sass 、 images</li>
+<li>components：頁面的最小單位，就是一般我們做 SPA 會放的元件們</li>
+<li>layouts：頁面版型，例如 navbar、 footer</li>
+<li>middleware：進入任何一個網頁前需要做的驗證函式</li>
+<li>pages：每個頁面放的地方，一個 .vue 就是一個網頁</li>
+<li>plugins：需要注入 Vue instance 的插件，譬如你選擇的 UI framework</li>
+<li>static：靜態資源，不需要被 webpack 打包的資源</li>
+<li>store： Vuex<br>參考資料：<a target="_blank" rel="noopener" href="https://medium.com/@jackercleaninglab/ssr-nuxt-js-%E8%B6%85%E5%85%A5%E9%96%80-84a0823b45ed">https://medium.com/@jackercleaninglab/ssr-nuxt-js-超入門-84a0823b45ed</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
       
   
   

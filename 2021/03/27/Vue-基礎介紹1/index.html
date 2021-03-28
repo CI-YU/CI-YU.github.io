@@ -23,16 +23,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Muse","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="隨手筆記">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="Vue3掛載至指定節點 123456789&#x2F;&#x2F;3.0無法使用elconst vm &#x3D; Vue.createApp(&amp;#123;    &#x2F;&#x2F;option&amp;#125;)vm.mount(&amp;#x27;#app&amp;#x27;);&#x2F;&#x2F;orＶue.createApp(&amp;#123;    &#x2F;&#x2F;option&amp;#125;).mount(&amp;#x27;#app&amp;#x27;);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Vue]:基礎介紹1">
+<meta property="og:url" content="http://yoursite.com/2021/03/27/Vue-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B91/index.html">
 <meta property="og:site_name" content="隨手筆記">
+<meta property="og:description" content="Vue3掛載至指定節點 123456789&#x2F;&#x2F;3.0無法使用elconst vm &#x3D; Vue.createApp(&amp;#123;    &#x2F;&#x2F;option&amp;#125;)vm.mount(&amp;#x27;#app&amp;#x27;);&#x2F;&#x2F;orＶue.createApp(&amp;#123;    &#x2F;&#x2F;option&amp;#125;).mount(&amp;#x27;#app&amp;#x27;);">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-27T03:10:22.000Z">
+<meta property="article:modified_time" content="2021-03-28T00:28:14.601Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://yoursite.com/archives/">
+<link rel="canonical" href="http://yoursite.com/2021/03/27/Vue-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B91/">
 
 
 <script class="page-configurations">
@@ -40,11 +44,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
-<title>Archive | 隨手筆記</title>
+<title>[Vue]:基礎介紹1 | 隨手筆記</title>
   
 
 
@@ -141,7 +145,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -154,6 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue3"><span class="nav-number">1.</span> <span class="nav-text">Vue3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#methods-vs-computed"><span class="nav-number">1.1.</span> <span class="nav-text">methods vs computed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model%E4%BF%AE%E9%A3%BE%E5%AD%90"><span class="nav-number">1.2.</span> <span class="nav-text">v-model修飾子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">1.3.</span> <span class="nav-text">參考資料</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -203,235 +208,142 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 13 posts in total. Keep on posting.</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/27/Vue-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bill huang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨手筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Vue]:基礎介紹1
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-27 11:10:22" itemprop="dateCreated datePublished" datetime="2021-03-27T11:10:22+08:00">2021-03-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-28 08:28:14" itemprop="dateModified" datetime="2021-03-28T08:28:14+08:00">2021-03-28</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Vue3"><a href="#Vue3" class="headerlink" title="Vue3"></a>Vue3</h1><p>掛載至指定節點</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3.0無法使用el</span></span><br><span class="line"><span class="keyword">const</span> vm = Vue.createApp(&#123;</span><br><span class="line">    <span class="comment">//option</span></span><br><span class="line">&#125;)</span><br><span class="line">vm.mount(<span class="string">&#x27;#app&#x27;</span>);</span><br><span class="line"><span class="comment">//or</span></span><br><span class="line">Ｖue.createApp(&#123;</span><br><span class="line">    <span class="comment">//option</span></span><br><span class="line">&#125;).mount(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>template可以不用再多一個div包覆 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vm = Vue.createApp(&#123;</span><br><span class="line">    template:<span class="string">`&lt;header&gt;&lt;/header&gt;`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="methods-vs-computed"><a href="#methods-vs-computed" class="headerlink" title="methods vs computed"></a>methods vs computed</h2><p>computed：純計算使用，使用上不用小括弧<br>methods：需要帶入參數時使用，使用上需要小括弧</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+<th>等效</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>v-bind：屬性名稱</td>
+<td>屬性綁定，將結果綁定在html屬性上</td>
+<td>：屬性名稱</td>
+</tr>
+<tr>
+<td>v-model</td>
+<td>表單綁定：雙向資料綁定</td>
+<td></td>
+</tr>
+<tr>
+<td>v-text</td>
+<td>模板綁定：不會將html標籤解析</td>
+<td></td>
+</tr>
+<tr>
+<td>v-html</td>
+<td>模板綁定：會將html標籤解析</td>
+<td></td>
+</tr>
+<tr>
+<td>v-once</td>
+<td>模板綁定：只會做一次綁定</td>
+<td></td>
+</tr>
+<tr>
+<td>v-pre</td>
+<td>模板綁定：不會解析模板內容</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="v-model修飾子"><a href="#v-model修飾子" class="headerlink" title="v-model修飾子"></a>v-model修飾子</h2><ul>
+<li>.lazy：離開輸入框焦點才會更新資料</li>
+<li>.number：轉型為數字</li>
+<li>.trim：過濾前後空白<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><a target="_blank" rel="noopener" href="https://book.vue.tw/">kuro Hsu</a></li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-03-27T16:57:42+08:00"
-              content="2021-03-27">
-          03-27
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/03/27/Vue-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B92/" itemprop="url">
-            <span itemprop="name">[Vue]:基礎介紹2</span>
-          </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/24/Node-js/" rel="prev" title="Node.js">
+                  <i class="fa fa-chevron-left"></i> Node.js
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/03/27/Vue-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B92/" rel="next" title="[Vue]:基礎介紹2">
+                  [Vue]:基礎介紹2 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-03-27T11:10:22+08:00"
-              content="2021-03-27">
-          03-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/03/27/Vue-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B91/" itemprop="url">
-            <span itemprop="name">[Vue]:基礎介紹1</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-03-24T22:52:46+08:00"
-              content="2021-03-24">
-          03-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/03/24/Node-js/" itemprop="url">
-            <span itemprop="name">Node.js</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-03-13T17:31:06+08:00"
-              content="2021-03-13">
-          03-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/03/13/Nuxt-js/" itemprop="url">
-            <span itemprop="name">Nuxt.js</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-29T08:33:18+08:00"
-              content="2020-10-29">
-          10-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/29/Sequelize/" itemprop="url">
-            <span itemprop="name">Sequelize</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-26T21:59:11+08:00"
-              content="2020-10-26">
-          10-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/26/Azure/" itemprop="url">
-            <span itemprop="name">Azure</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-03T16:01:33+08:00"
-              content="2020-10-03">
-          10-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/03/MariaDB%E7%AD%86%E8%A8%98/" itemprop="url">
-            <span itemprop="name">MariaDB筆記</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-09-13T10:37:50+08:00"
-              content="2020-09-13">
-          09-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/13/Get-Started-with-Docker/" itemprop="url">
-            <span itemprop="name">Get Started with Docker</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-09-13T00:22:10+08:00"
-              content="2020-09-13">
-          09-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/13/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%9Dnginx/" itemprop="url">
-            <span itemprop="name">使用docker安裝nginx</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-09-12T18:56:30+08:00"
-              content="2020-09-12">
-          09-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/12/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mac%E9%81%A0%E7%AB%AF%E6%A1%8C%E9%9D%A2%E5%88%B0Windows/" itemprop="url">
-            <span itemprop="name">如何使用Mac遠端桌面到Windows</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+
+
+
 
 
 <script>

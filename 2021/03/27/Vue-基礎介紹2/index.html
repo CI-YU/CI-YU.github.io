@@ -31,7 +31,7 @@
 <meta property="og:description" content="Vue3event   指令 描述 等效 範例    v-on 事件綁定： @事件名稱&#x3D;”運算式” v-on:事件名稱&#x3D;”運算式”">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-27T08:57:42.000Z">
-<meta property="article:modified_time" content="2021-03-31T15:27:44.206Z">
+<meta property="article:modified_time" content="2021-04-02T09:04:36.416Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-31 23:27:44" itemprop="dateModified" datetime="2021-03-31T23:27:44+08:00">2021-03-31</time>
+        <time title="Modified: 2021-04-02 17:04:36" itemprop="dateModified" datetime="2021-04-02T17:04:36+08:00">2021-04-02</time>
       </span>
 
   
@@ -327,7 +327,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>功能型(Functions)：有特殊應用，router-view</li>
 </ul>
 <h2 id="子元件data"><a href="#子元件data" class="headerlink" title="子元件data"></a>子元件data</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//error</span></span><br><span class="line">app.component(<span class="string">&#x27;xxx&#x27;</span>,&#123;</span><br><span class="line">    data:&#123;<span class="attr">count</span>:<span class="number">0</span>&#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//good</span></span><br><span class="line">app.component(<span class="string">&#x27;xxx&#x27;</span>,&#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;<span class="attr">count</span>:<span class="number">0</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="元件溝通"><a href="#元件溝通" class="headerlink" title="元件溝通"></a>元件溝通</h2><h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p>parentMsg在模板內要轉換為連字號parent-msg</p>
+<h2 id="元件溝通"><a href="#元件溝通" class="headerlink" title="元件溝通"></a>元件溝通</h2><h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p>parentMsg在模板內要轉換為連字號parent-msg<br>有內建資料類型驗證</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">props:&#123;</span><br><span class="line"></span><br><span class="line">    something:&#123;</span><br><span class="line">        <span class="comment">//一定要大寫開頭</span></span><br><span class="line">        type:[<span class="built_in">String</span>,<span class="built_in">Number</span>],</span><br><span class="line">        <span class="comment">//必要屬性為true</span></span><br><span class="line">        required:<span class="literal">true</span>,</span><br><span class="line">        <span class="comment">//預設值</span></span><br><span class="line">        <span class="keyword">default</span>:<span class="string">&#x27;Hello World!&#x27;</span>,</span><br><span class="line">        <span class="comment">//validator內不可存data /computed屬性</span></span><br><span class="line">        validator : <span class="function"><span class="params">value</span> =&gt;</span> value &gt; <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>傳遞物件類型到子元件，先解構為原始型別，再傳遞</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">component</span>&gt;</span></span><br><span class="line">v-for=&quot;book in books&quot;</span><br><span class="line">:name=&quot;book.name&quot;</span><br><span class="line">:author=&quot;book.author&quot;</span><br><span class="line"><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--也可簡寫成下方，會自動解構--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">component</span>&gt;</span></span><br><span class="line">v-for=&quot;book in books&quot;</span><br><span class="line">:=&quot;book&quot;</span><br><span class="line"><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.component(<span class="string">&#x27;component&#x27;</span>,&#123;</span><br><span class="line">    template:<span class="string">`&lt;div&gt;</span></span><br><span class="line"><span class="string">    &lt;input type=&quot;text&quot; v-model=&quot;name&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;input type=&quot;text&quot; v-model=&quot;author&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;`</span>,</span><br><span class="line">    props:[<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;author&#x27;</span>],</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a target="_blank" rel="noopener" href="https://book.vue.tw/">kuro Hsu</a></p>
 
     </div>

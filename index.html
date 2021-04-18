@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-14 16:10:23" itemprop="dateModified" datetime="2021-04-14T16:10:23+08:00">2021-04-14</time>
+        <time title="Modified: 2021-04-18 14:46:42" itemprop="dateModified" datetime="2021-04-18T14:46:42+08:00">2021-04-18</time>
       </span>
 
   
@@ -257,17 +257,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Node-API"><a href="#Node-API" class="headerlink" title="Node API"></a>Node API</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//寫入檔案</span></span><br><span class="line">fs.writeFileSync(<span class="string">&#x27;FileName&#x27;</span>, <span class="string">&#x27;content&#x27;</span>);</span><br><span class="line"><span class="comment">//加入文字</span></span><br><span class="line">fs.appendFileSunc(<span class="string">&#x27;File&#x27;</span>,<span class="string">&#x27;content&#x27;</span>);</span><br><span class="line"></span><br><span class="line">process.argv <span class="comment">// 回傳輸入參數陣列 第一個為執行node的路徑 第二個為正在被執行的js檔案路徑 第三個為所輸入參數</span></span><br></pre></td></tr></table></figure>
+          <h2 id="Node-API"><a href="#Node-API" class="headerlink" title="Node API"></a>Node API</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//寫入檔案</span></span><br><span class="line">fs.writeFileSync(<span class="string">&quot;FileName&quot;</span>, <span class="string">&quot;content&quot;</span>);</span><br><span class="line"><span class="comment">//加入文字</span></span><br><span class="line">fs.appendFileSunc(<span class="string">&quot;File&quot;</span>, <span class="string">&quot;content&quot;</span>);</span><br><span class="line"></span><br><span class="line">process.argv; <span class="comment">// 回傳輸入參數陣列 第一個為執行node的路徑 第二個為正在被執行的js檔案路徑 第三個為所輸入參數</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="NPM-Tools"><a href="#NPM-Tools" class="headerlink" title="NPM Tools"></a>NPM Tools</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://yargs.js.org/">yargs</a><br>可以自訂命令列工具，建立更複雜的命令列</li>
 </ul>
 <h2 id="Node-debug"><a href="#Node-debug" class="headerlink" title="Node debug"></a>Node debug</h2><ul>
 <li>console.log</li>
 <li>debugger<blockquote>
-<p>使用上，需要在terminal輸入node inspect才可以使用</p>
+<p>使用上，需要在 terminal 輸入 node inspect 才可以使用</p>
 </blockquote>
 </li>
 </ul>
+<h2 id="39-and-40"><a href="#39-and-40" class="headerlink" title="39 and 40"></a>39 and 40</h2><p>當函示進入callback err時 解構要提供他們預設，不然會跳錯誤</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getcode(address, <span class="function">(<span class="params">err, &#123; latitude, longitude, location &#125; = &#123;&#125;</span>) =&gt;</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>

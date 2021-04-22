@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-19 23:58:26" itemprop="dateModified" datetime="2021-04-19T23:58:26+08:00">2021-04-19</time>
+        <time title="Modified: 2021-04-22 22:33:35" itemprop="dateModified" datetime="2021-04-22T22:33:35+08:00">2021-04-22</time>
       </span>
 
   
@@ -276,7 +276,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <blockquote>
 <p>nodemon app.js -e js,hbs</p>
 </blockquote>
+<h2 id="hbs模板"><a href="#hbs模板" class="headerlink" title="hbs模板"></a>hbs模板</h2><p>使用組件</p>
+<blockquote>
+<p>“&gt; partials”放到雙大括弧內</p>
+</blockquote>
+<p>使用資料key</p>
+<blockquote>
+<p>“The Complete Node.js Developer Course(3rd Edition) 筆記1“放到雙大括弧內</p>
+</blockquote>
+<h2 id="error-page為什麼要放在最後面"><a href="#error-page為什麼要放在最後面" class="headerlink" title="error page為什麼要放在最後面"></a>error page為什麼要放在最後面</h2><p>因為nodejs是單步執行，所以router會從最上面開始讀取，當都沒有配對到時，才會進入error page</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&quot;*&quot;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    res.send(<span class="string">&quot;404 page&quot;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">\\*為萬用字元</span><br></pre></td></tr></table></figure>
 
+<h2 id="How-to-use-Fetch-APIs"><a href="#How-to-use-Fetch-APIs" class="headerlink" title="How to use Fetch APIs"></a>How to use Fetch APIs</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fecth(<span class="string">&quot;url&quot;</span>).then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;</span><br><span class="line">  response.json().then(<span class="function">(<span class="params">data</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">.json()為fecth輸出類型,包含下列幾種</span><br><span class="line">text()</span><br><span class="line">blob()</span><br><span class="line">formData()</span><br><span class="line">arrayBuffer()</span><br></pre></td></tr></table></figure>
       
     </div>
 

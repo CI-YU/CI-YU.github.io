@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-22 22:44:56" itemprop="dateModified" datetime="2021-04-22T22:44:56+08:00">2021-04-22</time>
+        <time title="Modified: 2021-04-26 11:29:06" itemprop="dateModified" datetime="2021-04-26T11:29:06+08:00">2021-04-26</time>
       </span>
 
   
@@ -291,6 +291,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="form"><a href="#form" class="headerlink" title="form"></a>form</h2><p>當表單加入submit事件後，每點擊一次按鈕，會面會閃爍，造成使用者體驗不佳的問題，這時候可以使用</p>
 <blockquote>
 <p> e.preventDefault();<br>消除默認行為</p>
+</blockquote>
+<h2 id="安裝heroku"><a href="#安裝heroku" class="headerlink" title="安裝heroku"></a>安裝heroku</h2><p>使用mac安裝heroku cli時遇到，輸入指令</p>
+<blockquote>
+<p>brew tap heroku/brew &amp;&amp; brew install heroku</p>
+</blockquote>
+<p>會遇到</p>
+<blockquote>
+<p>Your Command Line Tools (CLT) does not support macOS 11.</p>
+</blockquote>
+<p>是因為作業系統升級為Ｂig Sur的原因，在cmd使用下列指令，即可排除</p>
+<blockquote>
+<p>sudo rm -rf /Library/Developer/CommandLineTools<br>sudo xcode-select –install</p>
 </blockquote>
 
       

@@ -238,7 +238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-04-26 14:27:04 / Modified: 15:56:35" itemprop="dateCreated datePublished" datetime="2021-04-26T14:27:04+08:00">2021-04-26</time>
+      <time title="Created: 2021-04-26 14:27:04 / Modified: 16:35:21" itemprop="dateCreated datePublished" datetime="2021-04-26T14:27:04+08:00">2021-04-26</time>
     </span>
 
   
@@ -263,7 +263,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <blockquote>
 <p>sudo rm -rf /Library/Developer/CommandLineTools<br>sudo xcode-select –install</p>
 </blockquote>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init #git初始化</span><br><span class="line">git status #查詢當前狀態</span><br></pre></td></tr></table></figure>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>有四種狀態<br>Untracked Files(未被加入版控)<br>Unstaged Changes(已修改項目)<br>Staged Changes(等待提交項目)<br>Commits(已提交，會產生hash檔)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init #git初始化</span><br><span class="line">git status #查詢當前狀態</span><br></pre></td></tr></table></figure>
+
+<h2 id="設定不需要版控的檔案"><a href="#設定不需要版控的檔案" class="headerlink" title="設定不需要版控的檔案"></a>設定不需要版控的檔案</h2><p>在根目錄新增.gitigore的檔案<br>內容寫上不需要的路徑</p>
+<blockquote>
+<p>node_modules/</p>
+</blockquote>
+<h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add src/ #特定檔案或資料夾</span><br><span class="line">git add . #所有尚未被加入的檔案</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;content&quot; #寫上此次合併的描述 </span><br></pre></td></tr></table></figure>
+
+<h2 id="SSH-Secure-Shell"><a href="#SSH-Secure-Shell" class="headerlink" title="SSH(Secure Shell)"></a>SSH(Secure Shell)</h2><p>提供電腦與第三方服務進行安全通訊</p>
+
       
     </div>
 

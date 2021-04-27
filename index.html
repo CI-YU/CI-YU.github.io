@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-27 15:02:45" itemprop="dateModified" datetime="2021-04-27T15:02:45+08:00">2021-04-27</time>
+        <time title="Modified: 2021-04-27 15:10:35" itemprop="dateModified" datetime="2021-04-27T15:10:35+08:00">2021-04-27</time>
       </span>
 
   
@@ -284,6 +284,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;email&quot;</span><br><span class="line">按三次Enter</span><br><span class="line">ls -l -a ~/.ssh </span><br><span class="line">就會有兩個檔案</span><br><span class="line">id_rsa  #私人金鑰，要保存好，</span><br><span class="line">id_rsa.pub  #公開金鑰，提供給第三方服務來跟電腦做連線</span><br><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">ssh-add -K ~/.ssh/id_rsa   </span><br><span class="line">ssh -T git@github.com  #檢查是否在github上面新增ssh成功，會跳警告訊息，直接輸入yes即可</span><br></pre></td></tr></table></figure>
 
 <h3 id="heroku"><a href="#heroku" class="headerlink" title="heroku"></a>heroku</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heroku keys:add #將公用鑰匙上傳到heroku</span><br><span class="line">heroku create bill-weather-application # 建立一個應用程式在heroku上面</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">3000</span>;<span class="comment">//使用部署環境所提供的port或是預設3000</span></span><br></pre></td></tr></table></figure>
       
     </div>
 

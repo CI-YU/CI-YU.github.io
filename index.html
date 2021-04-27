@@ -236,10 +236,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-26 14:27:04 / Modified: 17:29:04" itemprop="dateCreated datePublished" datetime="2021-04-26T14:27:04+08:00">2021-04-26</time>
+      <time title="Created: 2021-04-26 14:27:04" itemprop="dateCreated datePublished" datetime="2021-04-26T14:27:04+08:00">2021-04-26</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-27 15:01:41" itemprop="dateModified" datetime="2021-04-27T15:01:41+08:00">2021-04-27</time>
+      </span>
 
   
 </div>
@@ -275,7 +281,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;content&quot; #寫上此次合併的描述 </span><br></pre></td></tr></table></figure>
 
 <h2 id="SSH-Secure-Shell"><a href="#SSH-Secure-Shell" class="headerlink" title="SSH(Secure Shell)"></a>SSH(Secure Shell)</h2><p>提供電腦與第三方服務進行安全通訊</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;email&quot;</span><br><span class="line">按三次Enter</span><br><span class="line">ls -l -a ~/.ssh </span><br><span class="line">就會有兩個檔案</span><br><span class="line">id_rsa</span><br><span class="line">id_rsa.pub</span><br><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">ssh-add -K ~/.ssh/id_rsa   </span><br><span class="line">ssh -T git@github.com  #檢查是否在github上面新增ssh成功，會跳警告訊息，直接輸入yes即可</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;email&quot;</span><br><span class="line">按三次Enter</span><br><span class="line">ls -l -a ~/.ssh </span><br><span class="line">就會有兩個檔案</span><br><span class="line">id_rsa  #私人金鑰</span><br><span class="line">id_rsa.pub  #公開金鑰</span><br><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">ssh-add -K ~/.ssh/id_rsa   </span><br><span class="line">ssh -T git@github.com  #檢查是否在github上面新增ssh成功，會跳警告訊息，直接輸入yes即可</span><br></pre></td></tr></table></figure>
+
+<h3 id="heroku"><a href="#heroku" class="headerlink" title="heroku"></a>heroku</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heroku keys:add #將公用鑰匙上傳到heroku</span><br><span class="line">heroku create bill-weather-application # 建立一個應用程式在heroku上面</span><br></pre></td></tr></table></figure>
       
     </div>
 

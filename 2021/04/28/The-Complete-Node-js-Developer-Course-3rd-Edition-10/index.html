@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="初始化mongodb時遇到錯誤 無法使用mongod系統效能&gt;安全性與隱私&gt;一般:允許app下載，來自app store和認證的開發者 作業系統：macOS Big Sur 11.2.3">
+<meta name="description" content="初始化 mongodb 時遇到錯誤 無法使用 mongod系統效能&gt;安全性與隱私&gt;一般:允許 app 下載，來自 app store 和認證的開發者 作業系統：macOS Big Sur 11.2.3    robo 3T can’t install sudo xattr -r -d com.apple.quarantine &#x2F;Applications&#x2F;Robo\ 3T.app  奇怪">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The Complete Node.js Developer Course(3rd Edition) - 10">
 <meta property="og:url" content="http://yoursite.com/2021/04/28/The-Complete-Node-js-Developer-Course-3rd-Edition-10/index.html">
 <meta property="og:site_name" content="隨手筆記">
-<meta property="og:description" content="初始化mongodb時遇到錯誤 無法使用mongod系統效能&gt;安全性與隱私&gt;一般:允許app下載，來自app store和認證的開發者 作業系統：macOS Big Sur 11.2.3">
+<meta property="og:description" content="初始化 mongodb 時遇到錯誤 無法使用 mongod系統效能&gt;安全性與隱私&gt;一般:允許 app 下載，來自 app store 和認證的開發者 作業系統：macOS Big Sur 11.2.3    robo 3T can’t install sudo xattr -r -d com.apple.quarantine &#x2F;Applications&#x2F;Robo\ 3T.app  奇怪">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-28T14:08:25.000Z">
-<meta property="article:modified_time" content="2021-04-28T14:58:05.729Z">
+<meta property="article:modified_time" content="2021-04-28T16:08:38.268Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -158,7 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96mongodb%E6%99%82%E9%81%87%E5%88%B0%E9%8C%AF%E8%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">初始化mongodb時遇到錯誤</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-mongodb-%E6%99%82%E9%81%87%E5%88%B0%E9%8C%AF%E8%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">初始化 mongodb 時遇到錯誤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#robo-3T-can%E2%80%99t-install"><span class="nav-number">2.</span> <span class="nav-text">robo 3T can’t install</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%87%E6%80%AA%E7%9A%84%E8%AD%A6%E5%91%8A%E8%A8%8A%E6%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text">奇怪的警告訊息</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -242,10 +242,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-28 22:08:25 / Modified: 22:58:05" itemprop="dateCreated datePublished" datetime="2021-04-28T22:08:25+08:00">2021-04-28</time>
+      <time title="Created: 2021-04-28 22:08:25" itemprop="dateCreated datePublished" datetime="2021-04-28T22:08:25+08:00">2021-04-28</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-29 00:08:38" itemprop="dateModified" datetime="2021-04-29T00:08:38+08:00">2021-04-29</time>
+      </span>
 
   
 </div>
@@ -257,12 +263,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="初始化mongodb時遇到錯誤"><a href="#初始化mongodb時遇到錯誤" class="headerlink" title="初始化mongodb時遇到錯誤"></a>初始化mongodb時遇到錯誤</h2><ul>
-<li>無法使用mongod<br>系統效能&gt;安全性與隱私&gt;一般:允許app下載，來自app store和認證的開發者<blockquote>
+        <h2 id="初始化-mongodb-時遇到錯誤"><a href="#初始化-mongodb-時遇到錯誤" class="headerlink" title="初始化 mongodb 時遇到錯誤"></a>初始化 mongodb 時遇到錯誤</h2><ul>
+<li>無法使用 mongod<br>系統效能&gt;安全性與隱私&gt;一般:允許 app 下載，來自 app store 和認證的開發者<blockquote>
 <p>作業系統：macOS Big Sur 11.2.3</p>
 </blockquote>
 </li>
 </ul>
+<h2 id="robo-3T-can’t-install"><a href="#robo-3T-can’t-install" class="headerlink" title="robo 3T can’t install"></a>robo 3T can’t install</h2><blockquote>
+<p>sudo xattr -r -d com.apple.quarantine /Applications/Robo\ 3T.app</p>
+</blockquote>
+<h3 id="奇怪的警告訊息"><a href="#奇怪的警告訊息" class="headerlink" title="奇怪的警告訊息"></a>奇怪的警告訊息</h3><p>會要求開啟下來，如想了解原因，點擊下方連結</p>
+<blockquote>
+<p>useUnifiedTopology: true</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/mongodb/node-mongodb-native/releases/tag/v3.2.1">警告細節</a></p>
 
     </div>
 

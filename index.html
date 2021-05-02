@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-02 11:13:50" itemprop="dateModified" datetime="2021-05-02T11:13:50+08:00">2021-05-02</time>
+        <time title="Modified: 2021-05-02 11:56:42" itemprop="dateModified" datetime="2021-05-02T11:56:42+08:00">2021-05-02</time>
       </span>
 
   
@@ -267,17 +267,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <blockquote>
 <p>sudo xattr -r -d com.apple.quarantine /Applications/Robo\ 3T.app</p>
 </blockquote>
-<h3 id="使用Mongodb的奇怪的警告訊息"><a href="#使用Mongodb的奇怪的警告訊息" class="headerlink" title="使用Mongodb的奇怪的警告訊息"></a>使用Mongodb的奇怪的警告訊息</h3><p>會要求將下方的屬性開啟，如想了解原因，點擊下方連結</p>
+<h3 id="使用-Mongodb-的奇怪的警告訊息"><a href="#使用-Mongodb-的奇怪的警告訊息" class="headerlink" title="使用 Mongodb 的奇怪的警告訊息"></a>使用 Mongodb 的奇怪的警告訊息</h3><p>會要求將下方的屬性開啟，如想了解原因，點擊下方連結</p>
 <blockquote>
 <p>useUnifiedTopology: true</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/mongodb/node-mongodb-native/releases/tag/v3.2.1">警告細節</a></p>
-<h2 id="id怎麼來的"><a href="#id怎麼來的" class="headerlink" title="_id怎麼來的"></a>_id怎麼來的</h2><p>總長度為12-byte為以下部分組成</p>
+<h2 id="id-怎麼來的"><a href="#id-怎麼來的" class="headerlink" title="_id 怎麼來的"></a>_id 怎麼來的</h2><p>總長度為 12-byte 為以下部分組成</p>
 <ul>
-<li>4-byte，時間紀錄以Unix時間為準</li>
+<li>4-byte，時間紀錄以 Unix 時間為準</li>
 <li>5-byte，隨機數</li>
 <li>3-byte，為遞增計數器，初始化為隨機數</li>
 </ul>
+<p>可以透過 ObjectID 取得</p>
+<blockquote>
+<p>const {ObjectID}=require(“mongodb”)<br>const id = ObjectID()</p>
+</blockquote>
+<h2 id="findOne-and-Find"><a href="#findOne-and-Find" class="headerlink" title="findOne and Find"></a>findOne and Find</h2><p>findOne回傳值為callback</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">findOne(&#123;<span class="attr">name</span>:<span class="string">&quot;Jack&quot;</span>&#125;,<span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;&#125;)<span class="comment">//直接回傳資料</span></span><br></pre></td></tr></table></figure>
+<p>find回傳值為Cursor，好處是可以隨需求回傳特定資料就好，不需要全部回傳</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find(&#123;<span class="attr">name</span>:<span class="string">&quot;Jack&quot;</span>&#125;).toArray(<span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;&#125;)<span class="comment">//回傳陣列</span></span><br><span class="line">find(&#123;<span class="attr">name</span>:<span class="string">&quot;Jack&quot;</span>&#125;).Count(<span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;&#125;)<span class="comment">//回傳數量</span></span><br></pre></td></tr></table></figure>
 
       
     </div>

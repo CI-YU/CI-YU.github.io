@@ -31,7 +31,7 @@
 <meta property="og:description" content="初始化 mongodb 時遇到錯誤 無法使用 mongod系統效能&gt;安全性與隱私&gt;一般:允許 app 下載，來自 app store 和認證的開發者 作業系統：macOS Big Sur 11.2.3    robo 3T 無法安裝執行下列指令  sudo xattr -r -d com.apple.quarantine &#x2F;Applications&#x2F;Robo\ 3T.app  使用Mo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-28T14:08:25.000Z">
-<meta property="article:modified_time" content="2021-04-29T15:24:13.755Z">
+<meta property="article:modified_time" content="2021-05-02T03:13:50.886Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -158,7 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-mongodb-%E6%99%82%E9%81%87%E5%88%B0%E9%8C%AF%E8%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">初始化 mongodb 時遇到錯誤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#robo-3T-%E7%84%A1%E6%B3%95%E5%AE%89%E8%A3%9D"><span class="nav-number">2.</span> <span class="nav-text">robo 3T 無法安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Mongodb%E7%9A%84%E5%A5%87%E6%80%AA%E7%9A%84%E8%AD%A6%E5%91%8A%E8%A8%8A%E6%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text">使用Mongodb的奇怪的警告訊息</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-mongodb-%E6%99%82%E9%81%87%E5%88%B0%E9%8C%AF%E8%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">初始化 mongodb 時遇到錯誤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#robo-3T-%E7%84%A1%E6%B3%95%E5%AE%89%E8%A3%9D"><span class="nav-number">2.</span> <span class="nav-text">robo 3T 無法安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Mongodb%E7%9A%84%E5%A5%87%E6%80%AA%E7%9A%84%E8%AD%A6%E5%91%8A%E8%A8%8A%E6%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text">使用Mongodb的奇怪的警告訊息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#id%E6%80%8E%E9%BA%BC%E4%BE%86%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">_id怎麼來的</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-29 23:24:13" itemprop="dateModified" datetime="2021-04-29T23:24:13+08:00">2021-04-29</time>
+        <time title="Modified: 2021-05-02 11:13:50" itemprop="dateModified" datetime="2021-05-02T11:13:50+08:00">2021-05-02</time>
       </span>
 
   
@@ -278,6 +278,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>useUnifiedTopology: true</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/mongodb/node-mongodb-native/releases/tag/v3.2.1">警告細節</a></p>
+<h2 id="id怎麼來的"><a href="#id怎麼來的" class="headerlink" title="_id怎麼來的"></a>_id怎麼來的</h2><p>總長度為12-byte為以下部分組成</p>
+<ul>
+<li>4-byte，時間紀錄以Unix時間為準</li>
+<li>5-byte，隨機數</li>
+<li>3-byte，為遞增計數器，初始化為隨機數</li>
+</ul>
 
     </div>
 

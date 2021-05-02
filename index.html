@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-29 23:24:13" itemprop="dateModified" datetime="2021-04-29T23:24:13+08:00">2021-04-29</time>
+        <time title="Modified: 2021-05-02 11:13:50" itemprop="dateModified" datetime="2021-05-02T11:13:50+08:00">2021-05-02</time>
       </span>
 
   
@@ -272,6 +272,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>useUnifiedTopology: true</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/mongodb/node-mongodb-native/releases/tag/v3.2.1">警告細節</a></p>
+<h2 id="id怎麼來的"><a href="#id怎麼來的" class="headerlink" title="_id怎麼來的"></a>_id怎麼來的</h2><p>總長度為12-byte為以下部分組成</p>
+<ul>
+<li>4-byte，時間紀錄以Unix時間為準</li>
+<li>5-byte，隨機數</li>
+<li>3-byte，為遞增計數器，初始化為隨機數</li>
+</ul>
 
       
     </div>

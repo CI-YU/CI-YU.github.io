@@ -31,7 +31,7 @@
 <meta property="og:description" content="mongoosemongoose實際上也是在使用mongodb這個函式庫 __v進行第83小節在新增資料進入DB時會發現額外的Field為mongoose的版控，詳細不了解 123mongoose.model(&quot;collectionsName&quot;,&amp;#123;title:&amp;#123;type:String&amp;#125;&amp;#125;)&#x2F;&#x2F;collectionsName會自動變成負數，">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-02T15:42:53.000Z">
-<meta property="article:modified_time" content="2021-05-03T12:03:11.497Z">
+<meta property="article:modified_time" content="2021-05-03T12:04:33.532Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-03 20:03:11" itemprop="dateModified" datetime="2021-05-03T20:03:11+08:00">2021-05-03</time>
+        <time title="Modified: 2021-05-03 20:04:33" itemprop="dateModified" datetime="2021-05-03T20:04:33+08:00">2021-05-03</time>
       </span>
 
   
@@ -265,7 +265,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="post-body" itemprop="articleBody">
         <h2 id="mongoose"><a href="#mongoose" class="headerlink" title="mongoose"></a>mongoose</h2><p>mongoose實際上也是在使用mongodb這個函式庫</p>
 <h2 id="v"><a href="#v" class="headerlink" title="__v"></a>__v</h2><p>進行第83小節在新增資料進入DB時會發現額外的Field<br>為mongoose的版控，詳細不了解</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongoose.model(<span class="string">&quot;collectionsName&quot;</span>,&#123;<span class="attr">title</span>:&#123;<span class="attr">type</span>:<span class="built_in">String</span>&#125;&#125;)</span><br><span class="line"><span class="comment">//collectionsName會自動變成負數，所以不用特別加上s</span></span><br><span class="line"><span class="comment">//例如user創建會變成users</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongoose.model(<span class="string">&quot;collectionsName&quot;</span>,&#123;<span class="attr">title</span>:&#123;<span class="attr">type</span>:<span class="built_in">String</span>&#125;&#125;)</span><br><span class="line"><span class="comment">//collectionsName會自動變成負數，所以不用特別加上s</span></span><br><span class="line"><span class="comment">//並且會全部轉為小寫，例如user創建會變成users</span></span><br></pre></td></tr></table></figure>
 
     </div>
 

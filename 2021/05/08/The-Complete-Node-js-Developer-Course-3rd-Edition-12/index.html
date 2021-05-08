@@ -23,20 +23,18 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="docker啟動步驟12systemctl start docker \\啟動dockersystemctl enable docker \\重開機可以自動啟動docker 一個images裡面可以有多個container 查看是否有下載到images 1docker images 12345docker search   &#x2F;&#x2F;搜尋有哪些imagesdocker pull     &#x2F;&#x2F;下載到本地端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Get Started with Docker">
-<meta property="og:url" content="http://yoursite.com/2020/09/13/Get-Started-with-Docker/index.html">
+<meta property="og:title" content="The Complete Node.js Developer Course(3rd Edition) - 12">
+<meta property="og:url" content="http://yoursite.com/2021/05/08/The-Complete-Node-js-Developer-Course-3rd-Edition-12/index.html">
 <meta property="og:site_name" content="隨手筆記">
-<meta property="og:description" content="docker啟動步驟12systemctl start docker \\啟動dockersystemctl enable docker \\重開機可以自動啟動docker 一個images裡面可以有多個container 查看是否有下載到images 1docker images 12345docker search   &#x2F;&#x2F;搜尋有哪些imagesdocker pull     &#x2F;&#x2F;下載到本地端">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-13T02:37:50.000Z">
-<meta property="article:modified_time" content="2020-09-13T16:56:48.197Z">
+<meta property="article:published_time" content="2021-05-08T12:31:44.000Z">
+<meta property="article:modified_time" content="2021-05-08T12:31:44.858Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://yoursite.com/2020/09/13/Get-Started-with-Docker/">
+<link rel="canonical" href="http://yoursite.com/2021/05/08/The-Complete-Node-js-Developer-Course-3rd-Edition-12/">
 
 
 <script class="page-configurations">
@@ -48,7 +46,7 @@
     lang   : 'en'
   };
 </script>
-<title>Get Started with Docker | 隨手筆記</title>
+<title>The Complete Node.js Developer Course(3rd Edition) - 12 | 隨手筆記</title>
   
 
 
@@ -145,7 +143,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -158,7 +156,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker%E5%95%9F%E5%8B%95%E6%AD%A5%E9%A9%9F"><span class="nav-number">1.</span> <span class="nav-text">docker啟動步驟</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -219,7 +216,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/13/Get-Started-with-Docker/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/08/The-Complete-Node-js-Developer-Course-3rd-Edition-12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -232,7 +229,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Get Started with Docker
+          The Complete Node.js Developer Course(3rd Edition) - 12
         </h1>
 
         <div class="post-meta-container">
@@ -243,15 +240,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-09-13 10:37:50" itemprop="dateCreated datePublished" datetime="2020-09-13T10:37:50+08:00">2020-09-13</time>
+      <time title="Created: 2021-05-08 20:31:44" itemprop="dateCreated datePublished" datetime="2021-05-08T20:31:44+08:00">2021-05-08</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-14 00:56:48" itemprop="dateModified" datetime="2020-09-14T00:56:48+08:00">2020-09-14</time>
-      </span>
 
   
 </div>
@@ -263,11 +253,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="docker啟動步驟"><a href="#docker啟動步驟" class="headerlink" title="docker啟動步驟"></a>docker啟動步驟</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker \\啟動docker</span><br><span class="line">systemctl enable docker \\重開機可以自動啟動docker</span><br></pre></td></tr></table></figure>
-<p>一個images裡面可以有多個container</p>
-<p>查看是否有下載到images</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker search   <span class="comment">//搜尋有哪些images</span></span><br><span class="line">docker pull     <span class="comment">//下載到本地端</span></span><br><span class="line">docker images   <span class="comment">//顯示本地端有哪些images</span></span><br><span class="line">docker run      <span class="comment">//執行images</span></span><br><span class="line">docker ps       <span class="comment">//顯示images執行了哪些container</span></span><br></pre></td></tr></table></figure>
+        
     </div>
 
     
@@ -280,14 +266,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/09/13/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%9Dnginx/" rel="prev" title="使用docker安裝nginx">
-                  <i class="fa fa-chevron-left"></i> 使用docker安裝nginx
+                <a href="/2021/05/02/The-Complete-Node-js-Developer-Course-3rd-Edition-11/" rel="prev" title="The Complete Node.js Developer Course(3rd Edition) - 11">
+                  <i class="fa fa-chevron-left"></i> The Complete Node.js Developer Course(3rd Edition) - 11
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/03/MariaDB%E7%AD%86%E8%A8%98/" rel="next" title="MariaDB筆記">
-                  MariaDB筆記 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

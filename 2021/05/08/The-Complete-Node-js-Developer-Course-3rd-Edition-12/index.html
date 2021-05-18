@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="添加自訂模組123mongoose.statics.functionName &#x3D; async (ref1, ref2) &#x3D;&gt; &amp;#123;&amp;#125;  jsonwebtoken(jwt)-目的是檢查數據是否有被修改分三組，用逗號區分開來，header.payload.signature前兩者都用base64編碼目的是檢查數據是否有被修改不建議放隱私訊息 1234567  const jwt">
+<meta name="description" content="添加自訂模組123mongoose.statics.functionName &#x3D; async (ref1, ref2) &#x3D;&gt; &amp;#123;&amp;#125;  jsonwebtoken(jwt)-目的是檢查數據是否有被修改分三組，用逗號區分開來，header.payload.signature前兩者都用base64編碼  檢查數據是否有被竄改 不建議放隱私訊息，例如：密碼1234567  cons">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The Complete Node.js Developer Course(3rd Edition) - 12">
 <meta property="og:url" content="http://yoursite.com/2021/05/08/The-Complete-Node-js-Developer-Course-3rd-Edition-12/index.html">
 <meta property="og:site_name" content="隨手筆記">
-<meta property="og:description" content="添加自訂模組123mongoose.statics.functionName &#x3D; async (ref1, ref2) &#x3D;&gt; &amp;#123;&amp;#125;  jsonwebtoken(jwt)-目的是檢查數據是否有被修改分三組，用逗號區分開來，header.payload.signature前兩者都用base64編碼目的是檢查數據是否有被修改不建議放隱私訊息 1234567  const jwt">
+<meta property="og:description" content="添加自訂模組123mongoose.statics.functionName &#x3D; async (ref1, ref2) &#x3D;&gt; &amp;#123;&amp;#125;  jsonwebtoken(jwt)-目的是檢查數據是否有被修改分三組，用逗號區分開來，header.payload.signature前兩者都用base64編碼  檢查數據是否有被竄改 不建議放隱私訊息，例如：密碼1234567  cons">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-08T12:31:44.000Z">
-<meta property="article:modified_time" content="2021-05-17T15:26:47.389Z">
+<meta property="article:modified_time" content="2021-05-17T15:28:24.669Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-17 23:26:47" itemprop="dateModified" datetime="2021-05-17T23:26:47+08:00">2021-05-17</time>
+        <time title="Modified: 2021-05-17 23:28:24" itemprop="dateModified" datetime="2021-05-17T23:28:24+08:00">2021-05-17</time>
       </span>
 
   
@@ -265,8 +265,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="post-body" itemprop="articleBody">
         <h2 id="添加自訂模組"><a href="#添加自訂模組" class="headerlink" title="添加自訂模組"></a>添加自訂模組</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongoose.statics.functionName = <span class="keyword">async</span> (ref1, ref2) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="jsonwebtoken-jwt-目的是檢查數據是否有被修改"><a href="#jsonwebtoken-jwt-目的是檢查數據是否有被修改" class="headerlink" title="jsonwebtoken(jwt)-目的是檢查數據是否有被修改"></a>jsonwebtoken(jwt)-目的是檢查數據是否有被修改</h2><p>分三組，用逗號區分開來，header.payload.signature<br>前兩者都用base64編碼<br>目的是檢查數據是否有被修改<br>不建議放隱私訊息</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">&#x27;jsonwebtoken&#x27;</span>);</span><br><span class="line"><span class="comment">//內容，密碼，過期時間</span></span><br><span class="line">  <span class="keyword">const</span> token = jwt.sign(&#123; <span class="attr">_id</span>: <span class="string">&#x27;abc123&#x27;</span> &#125;, <span class="string">&#x27;thisismynewcourse&#x27;</span>, &#123;</span><br><span class="line">    expiresIn: <span class="string">&#x27;1 second&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="comment">//可以檢查資料有沒有被篡改</span></span><br><span class="line">  <span class="keyword">const</span> data = jwt.verify(token, <span class="string">&#x27;thisismynewcourse&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="jsonwebtoken-jwt-目的是檢查數據是否有被修改"><a href="#jsonwebtoken-jwt-目的是檢查數據是否有被修改" class="headerlink" title="jsonwebtoken(jwt)-目的是檢查數據是否有被修改"></a>jsonwebtoken(jwt)-目的是檢查數據是否有被修改</h2><p>分三組，用逗號區分開來，header.payload.signature<br>前兩者都用base64編碼</p>
+<ul>
+<li>檢查數據是否有被竄改</li>
+<li>不建議放隱私訊息，例如：密碼<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">&#x27;jsonwebtoken&#x27;</span>);</span><br><span class="line"><span class="comment">//內容，密碼，過期時間</span></span><br><span class="line">  <span class="keyword">const</span> token = jwt.sign(&#123; <span class="attr">_id</span>: <span class="string">&#x27;abc123&#x27;</span> &#125;, <span class="string">&#x27;thisismynewcourse&#x27;</span>, &#123;</span><br><span class="line">    expiresIn: <span class="string">&#x27;1 second&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="comment">//可以檢查資料有沒有被篡改</span></span><br><span class="line">  <span class="keyword">const</span> data = jwt.verify(token, <span class="string">&#x27;thisismynewcourse&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
 
     </div>
 

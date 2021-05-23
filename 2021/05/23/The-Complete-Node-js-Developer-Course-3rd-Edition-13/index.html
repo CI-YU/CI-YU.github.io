@@ -23,21 +23,18 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="無法使用中文輸入法進入cmd後，使用dnf指令1sudo dnf install ibus-libzhuyin.x86_64 之後重開機就會有囉 沒辦法安裝re-pppoe有可能是安裝時候 沒有安裝開發工具 1234567sudo dnf grouplist &#x2F;&#x2F; 檢查有哪些群組可以安裝sudo dnf grouplist &quot;開發工具&quot;&#x2F;&#x2F;click ymake --versi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux-centos8">
-<meta property="og:url" content="http://yoursite.com/2020/09/09/linux-centos8/index.html">
+<meta property="og:title" content="The Complete Node.js Developer Course(3rd Edition) - 13">
+<meta property="og:url" content="http://yoursite.com/2021/05/23/The-Complete-Node-js-Developer-Course-3rd-Edition-13/index.html">
 <meta property="og:site_name" content="隨手筆記">
-<meta property="og:description" content="無法使用中文輸入法進入cmd後，使用dnf指令1sudo dnf install ibus-libzhuyin.x86_64 之後重開機就會有囉 沒辦法安裝re-pppoe有可能是安裝時候 沒有安裝開發工具 1234567sudo dnf grouplist &#x2F;&#x2F; 檢查有哪些群組可以安裝sudo dnf grouplist &quot;開發工具&quot;&#x2F;&#x2F;click ymake --versi">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-09T15:19:30.000Z">
-<meta property="article:modified_time" content="2020-09-21T15:38:07.008Z">
+<meta property="article:published_time" content="2021-05-23T12:35:51.000Z">
+<meta property="article:modified_time" content="2021-05-23T12:36:00.170Z">
 <meta property="article:author" content="bill huang">
-<meta property="article:tag" content="centos8 - linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://yoursite.com/2020/09/09/linux-centos8/">
+<link rel="canonical" href="http://yoursite.com/2021/05/23/The-Complete-Node-js-Developer-Course-3rd-Edition-13/">
 
 
 <script class="page-configurations">
@@ -49,7 +46,7 @@
     lang   : 'en'
   };
 </script>
-<title>linux-centos8 | 隨手筆記</title>
+<title>The Complete Node.js Developer Course(3rd Edition) - 13 | 隨手筆記</title>
   
 
 
@@ -146,7 +143,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -159,7 +156,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BC%B8%E5%85%A5%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">無法使用中文輸入法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%B2%E5%85%A5cmd%E5%BE%8C%EF%BC%8C%E4%BD%BF%E7%94%A8dnf%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">進入cmd後，使用dnf指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%92%E8%BE%A6%E6%B3%95%E5%AE%89%E8%A3%9Dre-pppoe"><span class="nav-number">1.2.</span> <span class="nav-text">沒辦法安裝re-pppoe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E6%89%BE%E4%B8%8D%E5%88%B0pppd%E7%9A%84%E5%95%8F%E9%A1%8C"><span class="nav-number">1.3.</span> <span class="nav-text">遇到找不到pppd的問題</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E6%9C%80%E9%AB%98%E6%AC%8A%E9%99%90%E9%96%8B%E5%95%9F%E6%AA%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">linux最高權限開啟檔案</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,7 +216,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/09/linux-centos8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/23/The-Complete-Node-js-Developer-Course-3rd-Edition-13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -233,7 +229,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          linux-centos8
+          The Complete Node.js Developer Course(3rd Edition) - 13
         </h1>
 
         <div class="post-meta-container">
@@ -243,24 +239,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2020-09-09 23:19:30" itemprop="dateCreated datePublished" datetime="2020-09-09T23:19:30+08:00">2020-09-09</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-21 23:38:07" itemprop="dateModified" datetime="2020-09-21T23:38:07+08:00">2020-09-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
+      <time title="Created: 2021-05-23 20:35:51 / Modified: 20:36:00" itemprop="dateCreated datePublished" datetime="2021-05-23T20:35:51+08:00">2021-05-23</time>
     </span>
 
   
@@ -273,16 +254,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="無法使用中文輸入法"><a href="#無法使用中文輸入法" class="headerlink" title="無法使用中文輸入法"></a>無法使用中文輸入法</h2><h3 id="進入cmd後，使用dnf指令"><a href="#進入cmd後，使用dnf指令" class="headerlink" title="進入cmd後，使用dnf指令"></a>進入cmd後，使用dnf指令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install ibus-libzhuyin.x86_64</span><br></pre></td></tr></table></figure>
-<p>之後重開機就會有囉</p>
-<h3 id="沒辦法安裝re-pppoe"><a href="#沒辦法安裝re-pppoe" class="headerlink" title="沒辦法安裝re-pppoe"></a>沒辦法安裝re-pppoe</h3><p>有可能是安裝時候 沒有安裝開發工具</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf grouplist // 檢查有哪些群組可以安裝</span><br><span class="line"></span><br><span class="line">sudo dnf grouplist &quot;開發工具&quot;</span><br><span class="line"></span><br><span class="line">//click y</span><br><span class="line"></span><br><span class="line">make --version //檢查是否有安裝make</span><br></pre></td></tr></table></figure>
-
-<h3 id="遇到找不到pppd的問題"><a href="#遇到找不到pppd的問題" class="headerlink" title="遇到找不到pppd的問題"></a>遇到找不到pppd的問題</h3><p>1.使用root去修改/usr/sbin/pppoe-setup檔案</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su //使用root權限</span><br><span class="line">nautilus //開啟檔案總管</span><br></pre></td></tr></table></figure>
-<p>2.開啟檔案總管後，找到pppoe-setup，使用編輯器開啟</p>
-<p>3.將pppd=/usr/local/pppd改為pppd=/usr/sbin/pppd</p>
-<h2 id="linux最高權限開啟檔案"><a href="#linux最高權限開啟檔案" class="headerlink" title="linux最高權限開啟檔案"></a>linux最高權限開啟檔案</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nautulus</span><br></pre></td></tr></table></figure>
+        <span id="more"></span>
     </div>
 
     
@@ -290,22 +262,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/centos8-linux/" rel="tag"># centos8 - linux</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/09/03/testpage/" rel="prev" title="testpage">
-                  <i class="fa fa-chevron-left"></i> testpage
+                <a href="/2021/05/08/The-Complete-Node-js-Developer-Course-3rd-Edition-12/" rel="prev" title="The Complete Node.js Developer Course(3rd Edition) - 12">
+                  <i class="fa fa-chevron-left"></i> The Complete Node.js Developer Course(3rd Edition) - 12
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/09/09/Hexo-Plugins/" rel="next" title="Hexo-Plugins">
-                  Hexo-Plugins <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

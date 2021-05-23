@@ -166,7 +166,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -213,6 +213,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/23/The-Complete-Node-js-Developer-Course-3rd-Edition-13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bill huang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨手筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/23/The-Complete-Node-js-Developer-Course-3rd-Edition-13/" class="post-title-link" itemprop="url">The Complete Node.js Developer Course(3rd Edition) - 13</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-05-23 20:35:51 / Modified: 20:36:00" itemprop="dateCreated datePublished" datetime="2021-05-23T20:35:51+08:00">2021-05-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/08/The-Complete-Node-js-Developer-Course-3rd-Edition-12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -244,7 +308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-23 17:08:00" itemprop="dateModified" datetime="2021-05-23T17:08:00+08:00">2021-05-23</time>
+        <time title="Modified: 2021-05-23 20:35:12" itemprop="dateModified" datetime="2021-05-23T20:35:12+08:00">2021-05-23</time>
       </span>
 
   
@@ -258,36 +322,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="添加自訂模組"><a href="#添加自訂模組" class="headerlink" title="添加自訂模組"></a>添加自訂模組</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongoose.statics.functionName = <span class="keyword">async</span> (ref1, ref2) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="jsonwebtoken-jwt-目的是檢查數據是否有被修改"><a href="#jsonwebtoken-jwt-目的是檢查數據是否有被修改" class="headerlink" title="jsonwebtoken(jwt)-目的是檢查數據是否有被修改"></a>jsonwebtoken(jwt)-目的是檢查數據是否有被修改</h2><p>分三組，用逗號區分開來，header.payload.signature<br>前兩者都用base64編碼</p>
-<ul>
-<li>檢查數據是否有被竄改</li>
-<li>不建議放隱私訊息，例如：密碼<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">&#x27;jsonwebtoken&#x27;</span>);</span><br><span class="line"><span class="comment">//內容，密碼，過期時間</span></span><br><span class="line">  <span class="keyword">const</span> token = jwt.sign(&#123; <span class="attr">_id</span>: <span class="string">&#x27;abc123&#x27;</span> &#125;, <span class="string">&#x27;thisismynewcourse&#x27;</span>, &#123;</span><br><span class="line">    expiresIn: <span class="string">&#x27;1 second&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="comment">//可以檢查資料有沒有被篡改</span></span><br><span class="line">  <span class="keyword">const</span> data = jwt.verify(token, <span class="string">&#x27;thisismynewcourse&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="router-Authorization"><a href="#router-Authorization" class="headerlink" title="router Authorization"></a>router Authorization</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//將中間件當作第二個參數傳入，即可先進行驗證後，才執行原先程式</span></span><br><span class="line">router.get(<span class="string">&#x27;/users/me&#x27;</span>, auth, <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">  res.send(req.user);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="postman-setting"><a href="#postman-setting" class="headerlink" title="postman setting"></a>postman setting</h2><p>使用環境變數與寫測試，提升彈性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取得回傳代碼</span></span><br><span class="line"><span class="keyword">if</span>(pm.response.code === <span class="number">200</span>)&#123;</span><br><span class="line">    <span class="comment">//設定環境變數</span></span><br><span class="line">    pm.environment.set(<span class="string">&#x27;authToken&#x27;</span>, pm.response.json().token);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="如何隱藏私人資料"><a href="#如何隱藏私人資料" class="headerlink" title="如何隱藏私人資料"></a>如何隱藏私人資料</h2><ol>
-<li>透過mongoose.methods加入function刪除私人資料<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//userRouter.js</span></span><br><span class="line"><span class="comment">//需自行呼叫函式</span></span><br><span class="line">res.send(&#123;<span class="attr">user</span>:user.getPublicProfile()&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//userSchema.js</span></span><br><span class="line">mongoose.methods.getPublicProfile = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> user = <span class="built_in">this</span>;</span><br><span class="line">    <span class="keyword">const</span> userObject = user.toObject();</span><br><span class="line">    <span class="keyword">delete</span> userObject.password;</span><br><span class="line">    <span class="keyword">return</span> userObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>透過express在執行res.send()時會呼叫toJSON的特性<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//userRouter.js</span></span><br><span class="line"><span class="comment">//因express執行send時已經會呼叫toJSON所以不用自行呼叫</span></span><br><span class="line">res.send(user);</span><br><span class="line"></span><br><span class="line"><span class="comment">//userSchema.js</span></span><br><span class="line">mongoose.methods.toJSON = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> user = <span class="built_in">this</span>;</span><br><span class="line">    <span class="keyword">const</span> userObject = user.toObject();</span><br><span class="line">    <span class="keyword">delete</span> userObject.password;</span><br><span class="line">    <span class="keyword">return</span> userObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="如何建立模組關聯"><a href="#如何建立模組關聯" class="headerlink" title="如何建立模組關聯"></a>如何建立模組關聯</h2><ol>
-<li>所建立的關聯會存入db<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在schema內定義好關聯，用ref指定與哪份schema有關</span></span><br><span class="line"><span class="keyword">const</span> taskSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">  description: &#123; <span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">trim</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  completed: &#123; <span class="attr">type</span>: <span class="built_in">Boolean</span>, <span class="attr">default</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  owner: &#123; <span class="attr">type</span>: mongoose.Schema.Types.ObjectId, <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">ref</span>: <span class="string">&#x27;User&#x27;</span> &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li>所建立的關聯不會存入db<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在models.js裡面定義virtual，用ref指定與誰有關聯</span></span><br><span class="line">userSchema.virtual(<span class="string">&#x27;tasks&#x27;</span>, &#123;</span><br><span class="line">  ref: <span class="string">&#x27;Task&#x27;</span>,</span><br><span class="line">  localField: <span class="string">&#x27;_id&#x27;</span>,</span><br><span class="line">  foreignField: <span class="string">&#x27;owner&#x27;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li>相同<ul>
-<li>用ref定義關聯</li>
-</ul>
-</li>
-<li>不同<ul>
-<li>virtual並不會存入資料庫</li>
-</ul>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/08/The-Complete-Node-js-Developer-Course-3rd-Edition-12/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -344,7 +386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-08 20:34:00" itemprop="dateModified" datetime="2021-05-08T20:34:00+08:00">2021-05-08</time>
+        <time title="Modified: 2021-05-23 20:35:19" itemprop="dateModified" datetime="2021-05-23T20:35:19+08:00">2021-05-23</time>
       </span>
 
   
@@ -358,15 +400,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="mongoose"><a href="#mongoose" class="headerlink" title="mongoose"></a>mongoose</h2><p>mongoose實際上也是在使用mongodb這個函式庫</p>
-<h2 id="v"><a href="#v" class="headerlink" title="__v"></a>__v</h2><p>進行第83小節在新增資料進入DB時會發現額外的Field<br>為mongoose的版控，詳細不了解</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongoose.model(<span class="string">&quot;collectionsName&quot;</span>,&#123;<span class="attr">title</span>:&#123;<span class="attr">type</span>:<span class="built_in">String</span>&#125;&#125;)</span><br><span class="line"><span class="comment">//collectionsName會自動變成負數，所以不用特別加上s</span></span><br><span class="line"><span class="comment">//並且會全部轉為小寫，例如user創建會變成users</span></span><br></pre></td></tr></table></figure>
-<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p>當有連續的promise要執行，可以在第一個promise 回傳參數，就可以繼續鍊式調用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      resolve(a + b);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">add(<span class="number">2</span>, <span class="number">5</span>)</span><br><span class="line">  .then(<span class="function">(<span class="params">sum</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(sum);</span><br><span class="line">    <span class="keyword">return</span> add(sum, <span class="number">5</span>);<span class="comment">//回傳</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">sum2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(sum2);<span class="comment">//就可以透過then直接接續</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="async-await"><a href="#async-await" class="headerlink" title="async await"></a>async await</h2><p>在使用非同步語法時，可以提升可讀性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      resolve(a + b);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> doWork = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> sum = <span class="keyword">await</span> add(<span class="number">2</span>,<span class="number">5</span>); <span class="comment">//等到add執行完，才會繼續</span></span><br><span class="line">  <span class="keyword">const</span> sum2 = <span class="keyword">await</span> add(sum,<span class="number">5</span>);<span class="comment">//等到add執行完，才會繼續</span></span><br><span class="line">  <span class="keyword">return</span> sum2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doWork().then(<span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>重點總結<br>mongoose操作<br>postman操作<br>promise改async await<br>express router操作</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/02/The-Complete-Node-js-Developer-Course-3rd-Edition-11/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -423,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-02 23:42:58" itemprop="dateModified" datetime="2021-05-02T23:42:58+08:00">2021-05-02</time>
+        <time title="Modified: 2021-05-23 20:35:25" itemprop="dateModified" datetime="2021-05-23T20:35:25+08:00">2021-05-23</time>
       </span>
 
   
@@ -440,34 +481,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>無法使用 mongod<br>系統效能&gt;安全性與隱私&gt;一般:允許 app 下載，來自 app store 和認證的開發者<blockquote>
 <p>作業系統：macOS Big Sur 11.2.3</p>
 </blockquote>
-</li>
-</ul>
-<h2 id="robo-3T-無法安裝"><a href="#robo-3T-無法安裝" class="headerlink" title="robo 3T 無法安裝"></a>robo 3T 無法安裝</h2><p>執行下列指令</p>
-<blockquote>
-<p>sudo xattr -r -d com.apple.quarantine /Applications/Robo\ 3T.app</p>
-</blockquote>
-<h3 id="使用-Mongodb-的奇怪的警告訊息"><a href="#使用-Mongodb-的奇怪的警告訊息" class="headerlink" title="使用 Mongodb 的奇怪的警告訊息"></a>使用 Mongodb 的奇怪的警告訊息</h3><p>會要求將下方的屬性開啟，如想了解原因，點擊下方連結</p>
-<blockquote>
-<p>useUnifiedTopology: true</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/mongodb/node-mongodb-native/releases/tag/v3.2.1">警告細節</a></p>
-<h2 id="id-怎麼來的"><a href="#id-怎麼來的" class="headerlink" title="_id 怎麼來的"></a>_id 怎麼來的</h2><p>總長度為 12-byte 為以下部分組成</p>
-<ul>
-<li>4-byte，時間紀錄以 Unix 時間為準</li>
-<li>5-byte，隨機數</li>
-<li>3-byte，為遞增計數器，初始化為隨機數</li>
-</ul>
-<p>可以透過 ObjectID 取得</p>
-<blockquote>
-<p>const {ObjectID}=require(“mongodb”)<br>const id = ObjectID()</p>
-</blockquote>
-<h2 id="findOne-and-Find"><a href="#findOne-and-Find" class="headerlink" title="findOne and Find"></a>findOne and Find</h2><p>findOne回傳值為callback</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">findOne(&#123;<span class="attr">name</span>:<span class="string">&quot;Jack&quot;</span>&#125;,<span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;&#125;)<span class="comment">//直接回傳資料</span></span><br></pre></td></tr></table></figure>
-<p>find回傳值為Cursor，好處是可以隨需求回傳特定資料就好，不需要全部回傳</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find(&#123;<span class="attr">name</span>:<span class="string">&quot;Jack&quot;</span>&#125;).toArray(<span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;&#125;)<span class="comment">//回傳陣列</span></span><br><span class="line">find(&#123;<span class="attr">name</span>:<span class="string">&quot;Jack&quot;</span>&#125;).Count(<span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;&#125;)<span class="comment">//回傳數量</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="mongodb-updateOne"><a href="#mongodb-updateOne" class="headerlink" title="mongodb updateOne()"></a>mongodb updateOne()</h2><p>updateOne的回傳值會有一個modifiedCount<br>會顯示修改的數量，1為修改，0為沒有找到可以修改的項目</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/28/The-Complete-Node-js-Developer-Course-3rd-Edition-10/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -524,7 +545,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-28 22:07:42" itemprop="dateModified" datetime="2021-04-28T22:07:42+08:00">2021-04-28</time>
+        <time title="Modified: 2021-05-23 20:35:36" itemprop="dateModified" datetime="2021-05-23T20:35:36+08:00">2021-05-23</time>
       </span>
 
   
@@ -542,33 +563,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>brew tap heroku/brew &amp;&amp; brew install heroku</p>
 </blockquote>
 <p>會遇到</p>
-<blockquote>
-<p>Your Command Line Tools (CLT) does not support macOS 11.</p>
-</blockquote>
-<p>是因為作業系統升級為Big Sur的原因，在cmd使用下列指令，即可排除</p>
-<blockquote>
-<p>sudo rm -rf /Library/Developer/CommandLineTools<br>sudo xcode-select –install</p>
-</blockquote>
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="有四種狀態"><a href="#有四種狀態" class="headerlink" title="有四種狀態"></a>有四種狀態</h3><ul>
-<li>Untracked Files(未被加入版控)</li>
-<li>Unstaged Changes(已修改項目)</li>
-<li>Staged Changes(等待提交項目)</li>
-<li>Commits(已提交，會產生hash檔)</li>
-</ul>
-<h2 id="設定不需要版控的檔案"><a href="#設定不需要版控的檔案" class="headerlink" title="設定不需要版控的檔案"></a>設定不需要版控的檔案</h2><p>在根目錄新增.gitigore的檔案<br>內容寫上不需要的路徑</p>
-<blockquote>
-<p>node_modules/</p>
-</blockquote>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init #git初始化</span><br><span class="line">git status #查詢當前狀態</span><br><span class="line">git add src/ #特定檔案或資料夾</span><br><span class="line">git add . #所有尚未被加入的檔案</span><br><span class="line">git commit -m &quot;content&quot; #寫上此次合併的描述 </span><br><span class="line">git remote #檢查已經設定好的版本庫</span><br></pre></td></tr></table></figure>
-
-<h2 id="SSH-Secure-Shell"><a href="#SSH-Secure-Shell" class="headerlink" title="SSH(Secure Shell)"></a>SSH(Secure Shell)</h2><p>提供電腦與第三方服務進行安全通訊</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;email&quot;</span><br><span class="line">按三次Enter</span><br><span class="line">ls -l -a ~/.ssh </span><br><span class="line">就會有兩個檔案</span><br><span class="line">id_rsa  #私人金鑰，要保存好，</span><br><span class="line">id_rsa.pub  #公開金鑰，提供給第三方服務來跟電腦做連線</span><br><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">ssh-add -K ~/.ssh/id_rsa   </span><br><span class="line">ssh -T git@github.com  #檢查是否在github上面新增ssh成功，會跳警告訊息，直接輸入yes即可</span><br></pre></td></tr></table></figure>
-
-<h2 id="heroku"><a href="#heroku" class="headerlink" title="heroku"></a>heroku</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heroku keys:add #將公用鑰匙上傳到heroku</span><br><span class="line">heroku create bill-weather-application # 建立一個應用程式在heroku上面</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">3000</span>;<span class="comment">//使用部署環境所提供的port或是預設3000</span></span><br></pre></td></tr></table></figure>
-<h3 id="deploy-heroku"><a href="#deploy-heroku" class="headerlink" title="deploy heroku"></a>deploy heroku</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push heroku main  #deploy heroku</span><br></pre></td></tr></table></figure>
-
-<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安裝在測試環境，上正式機器時不會安裝</span></span><br><span class="line">npm install xxx@x.y.z --save-dev</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/26/The-Complete-Node-js-Developer-Course-3rd-Edition-9/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1002,89 +1004,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <blockquote>
 <p>“type”:”module”</p>
 </blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/13/Nuxt-js/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bill huang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隨手筆記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/13/Nuxt-js/" class="post-title-link" itemprop="url">Nuxt.js</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-13 17:31:06" itemprop="dateCreated datePublished" datetime="2021-03-13T17:31:06+08:00">2021-03-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-14 12:22:57" itemprop="dateModified" datetime="2021-03-14T12:22:57+08:00">2021-03-14</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h2><p>devtools google 擴充套件<br>用途：debug vue<br>注意事項：需使用沒壓縮的vue檔案，nuxt使用的指令為 npm run dev才能進行除錯</p>
-<p>vue 3<br>用途：vue emmet</p>
-<p>vetur<br>用途：syntax highlighting、Snippet、auto completion、<br>emmet、Formatting</p>
-<h2 id="nuxt-目錄架構"><a href="#nuxt-目錄架構" class="headerlink" title="nuxt 目錄架構"></a>nuxt 目錄架構</h2><ul>
-<li>assets：專門放需要被 webpack 打包的資源，例如你的 sass 、 images</li>
-<li>components：頁面的最小單位，就是一般我們做 SPA 會放的元件們</li>
-<li>layouts：頁面版型，例如 navbar、 footer</li>
-<li>middleware：進入任何一個網頁前需要做的驗證函式</li>
-<li>pages：每個頁面放的地方，一個 .vue 就是一個網頁</li>
-<li>plugins：需要注入 Vue instance 的插件，譬如你選擇的 UI framework</li>
-<li>static：靜態資源，不需要被 webpack 打包的資源</li>
-<li>store： Vuex<br>參考資料：<a target="_blank" rel="noopener" href="https://medium.com/@jackercleaninglab/ssr-nuxt-js-%E8%B6%85%E5%85%A5%E9%96%80-84a0823b45ed">https://medium.com/@jackercleaninglab/ssr-nuxt-js-超入門-84a0823b45ed</a></li>
-</ul>
 
       
     </div>

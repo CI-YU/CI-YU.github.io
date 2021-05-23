@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="mongoosemongoose實際上也是在使用mongodb這個函式庫 __v進行第83小節在新增資料進入DB時會發現額外的Field為mongoose的版控，詳細不了解 123mongoose.model(&quot;collectionsName&quot;,&amp;#123;title:&amp;#123;type:String&amp;#125;&amp;#125;)&#x2F;&#x2F;collectionsName會自動變成負數，">
+<meta name="description" content="mongoosemongoose實際上也是在使用mongodb這個函式庫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The Complete Node.js Developer Course(3rd Edition) - 11">
 <meta property="og:url" content="http://yoursite.com/2021/05/02/The-Complete-Node-js-Developer-Course-3rd-Edition-11/index.html">
 <meta property="og:site_name" content="隨手筆記">
-<meta property="og:description" content="mongoosemongoose實際上也是在使用mongodb這個函式庫 __v進行第83小節在新增資料進入DB時會發現額外的Field為mongoose的版控，詳細不了解 123mongoose.model(&quot;collectionsName&quot;,&amp;#123;title:&amp;#123;type:String&amp;#125;&amp;#125;)&#x2F;&#x2F;collectionsName會自動變成負數，">
+<meta property="og:description" content="mongoosemongoose實際上也是在使用mongodb這個函式庫">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-02T15:42:53.000Z">
-<meta property="article:modified_time" content="2021-05-08T12:34:00.324Z">
+<meta property="article:modified_time" content="2021-05-23T12:35:19.088Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -171,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-08 20:34:00" itemprop="dateModified" datetime="2021-05-08T20:34:00+08:00">2021-05-08</time>
+        <time title="Modified: 2021-05-23 20:35:19" itemprop="dateModified" datetime="2021-05-23T20:35:19+08:00">2021-05-23</time>
       </span>
 
   
@@ -264,6 +264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <div class="post-body" itemprop="articleBody">
         <h2 id="mongoose"><a href="#mongoose" class="headerlink" title="mongoose"></a>mongoose</h2><p>mongoose實際上也是在使用mongodb這個函式庫</p>
+<span id="more"></span>
 <h2 id="v"><a href="#v" class="headerlink" title="__v"></a>__v</h2><p>進行第83小節在新增資料進入DB時會發現額外的Field<br>為mongoose的版控，詳細不了解</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongoose.model(<span class="string">&quot;collectionsName&quot;</span>,&#123;<span class="attr">title</span>:&#123;<span class="attr">type</span>:<span class="built_in">String</span>&#125;&#125;)</span><br><span class="line"><span class="comment">//collectionsName會自動變成負數，所以不用特別加上s</span></span><br><span class="line"><span class="comment">//並且會全部轉為小寫，例如user創建會變成users</span></span><br></pre></td></tr></table></figure>
 <h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p>當有連續的promise要執行，可以在第一個promise 回傳參數，就可以繼續鍊式調用</p>

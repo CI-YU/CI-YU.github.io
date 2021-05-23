@@ -31,7 +31,7 @@
 <meta property="og:description" content="添加自訂模組123mongoose.statics.functionName &#x3D; async (ref1, ref2) &#x3D;&gt; &amp;#123;&amp;#125;  jsonwebtoken(jwt)-目的是檢查數據是否有被修改分三組，用逗號區分開來，header.payload.signature前兩者都用base64編碼  檢查數據是否有被竄改 不建議放隱私訊息，例如：密碼1234567  cons">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-08T12:31:44.000Z">
-<meta property="article:modified_time" content="2021-05-23T07:27:17.625Z">
+<meta property="article:modified_time" content="2021-05-23T09:08:00.563Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-23 15:27:17" itemprop="dateModified" datetime="2021-05-23T15:27:17+08:00">2021-05-23</time>
+        <time title="Modified: 2021-05-23 17:08:00" itemprop="dateModified" datetime="2021-05-23T17:08:00+08:00">2021-05-23</time>
       </span>
 
   
@@ -279,7 +279,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>透過mongoose.methods加入function刪除私人資料<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//userRouter.js</span></span><br><span class="line"><span class="comment">//需自行呼叫函式</span></span><br><span class="line">res.send(&#123;<span class="attr">user</span>:user.getPublicProfile()&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//userSchema.js</span></span><br><span class="line">mongoose.methods.getPublicProfile = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> user = <span class="built_in">this</span>;</span><br><span class="line">    <span class="keyword">const</span> userObject = user.toObject();</span><br><span class="line">    <span class="keyword">delete</span> userObject.password;</span><br><span class="line">    <span class="keyword">return</span> userObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>透過express在執行res.send()時會呼叫toJSON的特性<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//userRouter.js</span></span><br><span class="line"><span class="comment">//因express執行send時已經會呼叫toJSON所以不用自行呼叫</span></span><br><span class="line">res.send(user);</span><br><span class="line"></span><br><span class="line"><span class="comment">//userSchema.js</span></span><br><span class="line">mongoose.methods.toJSON = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> user = <span class="built_in">this</span>;</span><br><span class="line">    <span class="keyword">const</span> userObject = user.toObject();</span><br><span class="line">    <span class="keyword">delete</span> userObject.password;</span><br><span class="line">    <span class="keyword">return</span> userObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="如何建立模組關聯"><a href="#如何建立模組關聯" class="headerlink" title="如何建立模組關聯"></a>如何建立模組關聯</h2>
+<h2 id="如何建立模組關聯"><a href="#如何建立模組關聯" class="headerlink" title="如何建立模組關聯"></a>如何建立模組關聯</h2><ol>
+<li>所建立的關聯會存入db<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在schema內定義好關聯，用ref指定與哪份schema有關</span></span><br><span class="line"><span class="keyword">const</span> taskSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">  description: &#123; <span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">trim</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  completed: &#123; <span class="attr">type</span>: <span class="built_in">Boolean</span>, <span class="attr">default</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  owner: &#123; <span class="attr">type</span>: mongoose.Schema.Types.ObjectId, <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">ref</span>: <span class="string">&#x27;User&#x27;</span> &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>所建立的關聯不會存入db<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在models.js裡面定義virtual，用ref指定與誰有關聯</span></span><br><span class="line">userSchema.virtual(<span class="string">&#x27;tasks&#x27;</span>, &#123;</span><br><span class="line">  ref: <span class="string">&#x27;Task&#x27;</span>,</span><br><span class="line">  localField: <span class="string">&#x27;_id&#x27;</span>,</span><br><span class="line">  foreignField: <span class="string">&#x27;owner&#x27;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>相同<ul>
+<li>用ref定義關聯</li>
+</ul>
+</li>
+<li>不同<ul>
+<li>virtual並不會存入資料庫</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
     

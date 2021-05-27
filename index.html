@@ -166,7 +166,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -213,6 +213,145 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/28/The-Complete-Node-js-Developer-Course-3rd-Edition-15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bill huang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨手筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/28/The-Complete-Node-js-Developer-Course-3rd-Edition-15/" class="post-title-link" itemprop="url">The Complete Node.js Developer Course(3rd Edition) - 15</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-05-28 00:45:58 / Modified: 01:01:19" itemprop="dateCreated datePublished" datetime="2021-05-28T00:45:58+08:00">2021-05-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="sendgrid-email-api"><a href="#sendgrid-email-api" class="headerlink" title="sendgrid email api"></a>sendgrid email api</h1><p>需注意，如果使用yahoo mail會有問題，建議使用google email使用</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/28/The-Complete-Node-js-Developer-Course-3rd-Edition-14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bill huang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨手筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/28/The-Complete-Node-js-Developer-Course-3rd-Edition-14/" class="post-title-link" itemprop="url">The Complete Node.js Developer Course(3rd Edition) - 14</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-05-28 00:45:53 / Modified: 00:51:47" itemprop="dateCreated datePublished" datetime="2021-05-28T00:45:53+08:00">2021-05-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Upload-file"><a href="#Upload-file" class="headerlink" title="Upload file"></a>Upload file</h2><p>透過multer中間件來上傳檔案</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> multer = <span class="built_in">require</span>(<span class="string">&#x27;multer&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> upload = multer(&#123; </span><br><span class="line">    <span class="comment">//dest：選擇要儲存到哪個資料夾，不設定，可以透過req.file取得檔案，並選擇要如何儲存</span></span><br><span class="line">    dest: <span class="string">&#x27;avatars&#x27;</span>,</span><br><span class="line">    <span class="comment">//限制檔案大小(位元組)，</span></span><br><span class="line">    limits: &#123; <span class="attr">fileSize</span>: <span class="number">1000000</span> &#125;,</span><br><span class="line">    fileFilter(req, file, cb) &#123;</span><br><span class="line">      <span class="comment">//限制檔名為doc與docx</span></span><br><span class="line">      <span class="keyword">if</span> (!file.originalname.match(<span class="regexp">/\.(doc|docx)$/</span>)) &#123;</span><br><span class="line">        <span class="keyword">return</span> cb(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&#x27;Please upload a Word document&#x27;</span>));</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//接受此文件，不接受改false</span></span><br><span class="line">      cb(<span class="literal">undefined</span>, <span class="literal">true</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//會指定接收form-data的名稱為avatar的檔案傳到avatars的資料夾內</span></span><br><span class="line">router.post(<span class="string">&#x27;/users/me/avatar&#x27;</span>, upload.single(<span class="string">&#x27;avatar&#x27;</span>), <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.send();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="取得自訂錯誤訊息"><a href="#取得自訂錯誤訊息" class="headerlink" title="取得自訂錯誤訊息"></a>取得自訂錯誤訊息</h3><p>在使用multer所取得的錯誤訊息並不是json，當我們想使用json格式時需做以下調整</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//會指定接收form-data的名稱為avatar的檔案傳到avatars的資料夾內</span></span><br><span class="line">router.post(</span><br><span class="line">  <span class="string">&#x27;/users/me/avatar&#x27;</span>,</span><br><span class="line">  upload.single(<span class="string">&#x27;avatar&#x27;</span>),</span><br><span class="line">  (req, res) =&gt; &#123;</span><br><span class="line">    res.send();</span><br><span class="line">  &#125;,</span><br><span class="line">  (err, req, res, next) =&gt; &#123;</span><br><span class="line">    <span class="comment">//如果有錯誤，會跳到這</span></span><br><span class="line">    res.status(<span class="number">400</span>).send(&#123; <span class="attr">error</span>: err.message &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="讀取圖片"><a href="#讀取圖片" class="headerlink" title="讀取圖片"></a>讀取圖片</h3><p>因儲存在db為二進制，設定回傳內容的類型，即可將檔案取回並顯示</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.set(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;image/jpg&#x27;</span>);</span><br><span class="line">res.send(data)</span><br></pre></td></tr></table></figure>
+
+<h3 id="壓縮檔案"><a href="#壓縮檔案" class="headerlink" title="壓縮檔案"></a>壓縮檔案</h3><ul>
+<li>使用sharp進行壓縮，會透過C++進行壓縮、轉檔<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> buffer = <span class="keyword">await</span> sharp(req.file.buffer)</span><br><span class="line">  <span class="comment">//變更大小</span></span><br><span class="line">  .resize(&#123; <span class="attr">width</span>: <span class="number">250</span>, <span class="attr">height</span>: <span class="number">250</span> &#125;)</span><br><span class="line">  <span class="comment">//轉檔為png</span></span><br><span class="line">  .png()</span><br><span class="line">  <span class="comment">//二進制檔案輸出</span></span><br><span class="line">  .toBuffer();</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/23/The-Complete-Node-js-Developer-Course-3rd-Edition-13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -244,7 +383,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-25 21:26:50" itemprop="dateModified" datetime="2021-05-25T21:26:50+08:00">2021-05-25</time>
+        <time title="Modified: 2021-05-28 00:51:43" itemprop="dateModified" datetime="2021-05-28T00:51:43+08:00">2021-05-28</time>
       </span>
 
   
@@ -889,163 +1028,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/27/Vue-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bill huang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隨手筆記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/27/Vue-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B91/" class="post-title-link" itemprop="url">[Vue]:基礎介紹1</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-27 11:10:22" itemprop="dateCreated datePublished" datetime="2021-03-27T11:10:22+08:00">2021-03-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-28 08:28:14" itemprop="dateModified" datetime="2021-03-28T08:28:14+08:00">2021-03-28</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Vue3"><a href="#Vue3" class="headerlink" title="Vue3"></a>Vue3</h1><p>掛載至指定節點</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3.0無法使用el</span></span><br><span class="line"><span class="keyword">const</span> vm = Vue.createApp(&#123;</span><br><span class="line">    <span class="comment">//option</span></span><br><span class="line">&#125;)</span><br><span class="line">vm.mount(<span class="string">&#x27;#app&#x27;</span>);</span><br><span class="line"><span class="comment">//or</span></span><br><span class="line">Ｖue.createApp(&#123;</span><br><span class="line">    <span class="comment">//option</span></span><br><span class="line">&#125;).mount(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/27/Vue-%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B91/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/24/Node-js/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bill huang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隨手筆記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/24/Node-js/" class="post-title-link" itemprop="url">Node.js</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-24 22:52:46" itemprop="dateCreated datePublished" datetime="2021-03-24T22:52:46+08:00">2021-03-24</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-12 14:31:04" itemprop="dateModified" datetime="2021-04-12T14:31:04+08:00">2021-04-12</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="nvm常用指令"><a href="#nvm常用指令" class="headerlink" title="nvm常用指令"></a>nvm常用指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nvm install xx.yy.zz //下載特定版本</span><br><span class="line">nvm ls-remote --lts//查看可用版本 lts:長期支援版本</span><br><span class="line">nvm use xx.yy.zz //使用特定版本 只有當前shell有用</span><br><span class="line">nvm ls //已經安裝哪些版本</span><br><span class="line">nvm <span class="built_in">alias</span> default &lt;version&gt; //nvm預設版本</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用ES6"><a href="#使用ES6" class="headerlink" title="使用ES6"></a>使用ES6</h2><p>package.json新增</p>
-<blockquote>
-<p>“type”:”module”</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="Upload file透過multer中間件來上傳檔案 12345678910111213141516171819const multer &#x3D; require(&amp;#x27;multer&amp;#x27;);const upload &#x3D; multer(&amp;#123;     &#x2F;&#x2F;dest：選擇要儲存到哪個資料夾，不設定，可以透過req.file取得檔案，並選擇要如何儲存    dest: &amp;#x27;ava">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Complete Node.js Developer Course(3rd Edition) - 14">
+<meta property="og:url" content="http://yoursite.com/2021/05/28/The-Complete-Node-js-Developer-Course-3rd-Edition-14/index.html">
+<meta property="og:site_name" content="隨手筆記">
+<meta property="og:description" content="Upload file透過multer中間件來上傳檔案 12345678910111213141516171819const multer &#x3D; require(&amp;#x27;multer&amp;#x27;);const upload &#x3D; multer(&amp;#123;     &#x2F;&#x2F;dest：選擇要儲存到哪個資料夾，不設定，可以透過req.file取得檔案，並選擇要如何儲存    dest: &amp;#x27;ava">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-27T16:45:53.000Z">
+<meta property="article:modified_time" content="2021-05-27T16:51:47.597Z">
+<meta property="article:author" content="bill huang">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2021/05/28/The-Complete-Node-js-Developer-Course-3rd-Edition-14/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>The Complete Node.js Developer Course(3rd Edition) - 14 | 隨手筆記</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PCNN69V');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCNN69V"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">隨手筆記</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Upload-file"><span class="nav-number">1.</span> <span class="nav-text">Upload file</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E5%BE%97%E8%87%AA%E8%A8%82%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF"><span class="nav-number">1.1.</span> <span class="nav-text">取得自訂錯誤訊息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%80%E5%8F%96%E5%9C%96%E7%89%87"><span class="nav-number">1.2.</span> <span class="nav-text">讀取圖片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%93%E7%B8%AE%E6%AA%94%E6%A1%88"><span class="nav-number">1.3.</span> <span class="nav-text">壓縮檔案</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">bill huang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/28/The-Complete-Node-js-Developer-Course-3rd-Edition-14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bill huang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨手筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          The Complete Node.js Developer Course(3rd Edition) - 14
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-05-28 00:45:53 / Modified: 00:51:47" itemprop="dateCreated datePublished" datetime="2021-05-28T00:45:53+08:00">2021-05-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Upload-file"><a href="#Upload-file" class="headerlink" title="Upload file"></a>Upload file</h2><p>透過multer中間件來上傳檔案</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> multer = <span class="built_in">require</span>(<span class="string">&#x27;multer&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> upload = multer(&#123; </span><br><span class="line">    <span class="comment">//dest：選擇要儲存到哪個資料夾，不設定，可以透過req.file取得檔案，並選擇要如何儲存</span></span><br><span class="line">    dest: <span class="string">&#x27;avatars&#x27;</span>,</span><br><span class="line">    <span class="comment">//限制檔案大小(位元組)，</span></span><br><span class="line">    limits: &#123; <span class="attr">fileSize</span>: <span class="number">1000000</span> &#125;,</span><br><span class="line">    fileFilter(req, file, cb) &#123;</span><br><span class="line">      <span class="comment">//限制檔名為doc與docx</span></span><br><span class="line">      <span class="keyword">if</span> (!file.originalname.match(<span class="regexp">/\.(doc|docx)$/</span>)) &#123;</span><br><span class="line">        <span class="keyword">return</span> cb(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&#x27;Please upload a Word document&#x27;</span>));</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//接受此文件，不接受改false</span></span><br><span class="line">      cb(<span class="literal">undefined</span>, <span class="literal">true</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//會指定接收form-data的名稱為avatar的檔案傳到avatars的資料夾內</span></span><br><span class="line">router.post(<span class="string">&#x27;/users/me/avatar&#x27;</span>, upload.single(<span class="string">&#x27;avatar&#x27;</span>), <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.send();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="取得自訂錯誤訊息"><a href="#取得自訂錯誤訊息" class="headerlink" title="取得自訂錯誤訊息"></a>取得自訂錯誤訊息</h3><p>在使用multer所取得的錯誤訊息並不是json，當我們想使用json格式時需做以下調整</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//會指定接收form-data的名稱為avatar的檔案傳到avatars的資料夾內</span></span><br><span class="line">router.post(</span><br><span class="line">  <span class="string">&#x27;/users/me/avatar&#x27;</span>,</span><br><span class="line">  upload.single(<span class="string">&#x27;avatar&#x27;</span>),</span><br><span class="line">  (req, res) =&gt; &#123;</span><br><span class="line">    res.send();</span><br><span class="line">  &#125;,</span><br><span class="line">  (err, req, res, next) =&gt; &#123;</span><br><span class="line">    <span class="comment">//如果有錯誤，會跳到這</span></span><br><span class="line">    res.status(<span class="number">400</span>).send(&#123; <span class="attr">error</span>: err.message &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="讀取圖片"><a href="#讀取圖片" class="headerlink" title="讀取圖片"></a>讀取圖片</h3><p>因儲存在db為二進制，設定回傳內容的類型，即可將檔案取回並顯示</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.set(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;image/jpg&#x27;</span>);</span><br><span class="line">res.send(data)</span><br></pre></td></tr></table></figure>
+
+<h3 id="壓縮檔案"><a href="#壓縮檔案" class="headerlink" title="壓縮檔案"></a>壓縮檔案</h3><ul>
+<li>使用sharp進行壓縮，會透過C++進行壓縮、轉檔<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> buffer = <span class="keyword">await</span> sharp(req.file.buffer)</span><br><span class="line">  <span class="comment">//變更大小</span></span><br><span class="line">  .resize(&#123; <span class="attr">width</span>: <span class="number">250</span>, <span class="attr">height</span>: <span class="number">250</span> &#125;)</span><br><span class="line">  <span class="comment">//轉檔為png</span></span><br><span class="line">  .png()</span><br><span class="line">  <span class="comment">//二進制檔案輸出</span></span><br><span class="line">  .toBuffer();</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/05/23/The-Complete-Node-js-Developer-Course-3rd-Edition-13/" rel="prev" title="The Complete Node.js Developer Course(3rd Edition) - 13">
+                  <i class="fa fa-chevron-left"></i> The Complete Node.js Developer Course(3rd Edition) - 13
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/05/28/The-Complete-Node-js-Developer-Course-3rd-Edition-15/" rel="next" title="The Complete Node.js Developer Course(3rd Edition) - 15">
+                  The Complete Node.js Developer Course(3rd Edition) - 15 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bill huang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

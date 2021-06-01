@@ -236,10 +236,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-05-31 20:02:38 / Modified: 23:20:17" itemprop="dateCreated datePublished" datetime="2021-05-31T20:02:38+08:00">2021-05-31</time>
+      <time title="Created: 2021-05-31 20:02:38" itemprop="dateCreated datePublished" datetime="2021-05-31T20:02:38+08:00">2021-05-31</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-06-01 19:22:06" itemprop="dateModified" datetime="2021-06-01T19:22:06+08:00">2021-06-01</time>
+      </span>
 
   
 </div>
@@ -253,6 +259,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="post-body" itemprop="articleBody">
           <h1 id="測試"><a href="#測試" class="headerlink" title="測試"></a>測試</h1><p>目前js主流為jest跟mocha，可以選擇自己喜歡的測試框架，下面使用jest做為範例</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// npm i jest --save-dev</span></span><br><span class="line"><span class="comment">// /src/math.js</span></span><br><span class="line"><span class="keyword">const</span> calculateTip = <span class="function">(<span class="params">total, tipPercent = <span class="number">0.25</span></span>) =&gt;</span> total + total * tipPercent;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123; calculateTip &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// /tests/math.test.js</span></span><br><span class="line"><span class="keyword">const</span> &#123; calculateTip &#125; = <span class="built_in">require</span>(<span class="string">&#x27;../src/math&#x27;</span>);</span><br><span class="line">test(<span class="string">&#x27;Should calculate total with default tip&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> total = calculateTip(<span class="number">10</span>);</span><br><span class="line">  expect(total).toBe(<span class="number">12.5</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="測試非同步"><a href="#測試非同步" class="headerlink" title="測試非同步"></a>測試非同步</h2><p>有兩種模式，推薦較為彈性的async方式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加入done函數，當完成時呼叫</span></span><br><span class="line">test(<span class="string">&#x27;Should add two numbers&#x27;</span>, <span class="function">(<span class="params">done</span>) =&gt;</span> &#123;</span><br><span class="line">  add(<span class="number">2</span>, <span class="number">3</span>).then(<span class="function">(<span class="params">sum</span>) =&gt;</span> &#123;</span><br><span class="line">    expect(sum).toBe(<span class="number">5</span>);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//使用async、await</span></span><br><span class="line">test(<span class="string">&#x27;Should add two numbers async/await&#x27;</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> sum = <span class="keyword">await</span> add(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">  expect(sum).toBe(<span class="number">3</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
 

@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-02 22:32:33" itemprop="dateModified" datetime="2021-06-02T22:32:33+08:00">2021-06-02</time>
+        <time title="Modified: 2021-06-05 00:56:09" itemprop="dateModified" datetime="2021-06-05T00:56:09+08:00">2021-06-05</time>
       </span>
 
   
@@ -262,8 +262,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <h2 id="測試非同步"><a href="#測試非同步" class="headerlink" title="測試非同步"></a>測試非同步</h2><p>有兩種模式，推薦較為彈性的async方式</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加入done函數，當完成時呼叫</span></span><br><span class="line">test(<span class="string">&#x27;Should add two numbers&#x27;</span>, <span class="function">(<span class="params">done</span>) =&gt;</span> &#123;</span><br><span class="line">  add(<span class="number">2</span>, <span class="number">3</span>).then(<span class="function">(<span class="params">sum</span>) =&gt;</span> &#123;</span><br><span class="line">    expect(sum).toBe(<span class="number">5</span>);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//使用async、await</span></span><br><span class="line">test(<span class="string">&#x27;Should add two numbers async/await&#x27;</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> sum = <span class="keyword">await</span> add(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">  expect(sum).toBe(<span class="number">3</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="測試技巧"><a href="#測試技巧" class="headerlink" title="測試技巧"></a>測試技巧</h2><p>有些api需要預先有資料可以使用jest提供的beforeEach預先加入一筆資料</p>
+<h2 id="測試技巧"><a href="#測試技巧" class="headerlink" title="測試技巧"></a>測試技巧</h2><h3 id="預先提供資料"><a href="#預先提供資料" class="headerlink" title="預先提供資料"></a>預先提供資料</h3><p>有些api需要預先有資料可以使用jest提供的beforeEach預先加入一筆資料</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">beforeEach(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="comment">//將所有資料刪除</span></span><br><span class="line">  <span class="keyword">await</span> User.deleteMany();</span><br><span class="line">  <span class="comment">//預先加入一筆帳號資料，後續需要登入才能測試的api就可以直接使用</span></span><br><span class="line">  <span class="keyword">await</span> <span class="keyword">new</span> User(userOne).save();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="測試內容有包含寄信，該如何排除"><a href="#測試內容有包含寄信，該如何排除" class="headerlink" title="測試內容有包含寄信，該如何排除"></a>測試內容有包含寄信，該如何排除</h3><p>在tests資料夾內新增對應的資料夾與檔案，並寫上空物件讓jest覆蓋原先物件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> sgMail = <span class="built_in">require</span>(<span class="string">&#x27;@sendgrid/mail&#x27;</span>);</span><br><span class="line">sgMail.send()</span><br></pre></td></tr></table></figure>
+
+<h2 id="當多個測試都與資料庫相互有關聯，遇到衝突該如何處理？"><a href="#當多個測試都與資料庫相互有關聯，遇到衝突該如何處理？" class="headerlink" title="當多個測試都與資料庫相互有關聯，遇到衝突該如何處理？"></a>當多個測試都與資料庫相互有關聯，遇到衝突該如何處理？</h2><p>可以在npm所要執行的test多新增語法–runInBand，會變成依序執行，就不會衝突到了</p>
+<blockquote>
+<p>jest –watch –runInBand</p>
+</blockquote>
+
       
     </div>
 

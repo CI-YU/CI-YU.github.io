@@ -31,7 +31,7 @@
 <meta property="og:description" content="測試目前js主流為jest跟mocha，可以選擇自己喜歡的測試框架，下面使用jest做為範例 1234567891011&#x2F;&#x2F; npm i jest --save-dev&#x2F;&#x2F; &#x2F;src&#x2F;math.jsconst calculateTip &#x3D; (total, tipPercent &#x3D; 0.25) &#x3D;&gt; total + total * tipPercent;module.exports &#x3D; &amp;#1">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-31T12:02:38.000Z">
-<meta property="article:modified_time" content="2021-06-02T14:32:33.709Z">
+<meta property="article:modified_time" content="2021-06-04T16:56:09.653Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -158,7 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6"><span class="nav-number">1.</span> <span class="nav-text">測試</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E9%9D%9E%E5%90%8C%E6%AD%A5"><span class="nav-number">1.1.</span> <span class="nav-text">測試非同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E6%8A%80%E5%B7%A7"><span class="nav-number">1.2.</span> <span class="nav-text">測試技巧</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6"><span class="nav-number">1.</span> <span class="nav-text">測試</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E9%9D%9E%E5%90%8C%E6%AD%A5"><span class="nav-number">1.1.</span> <span class="nav-text">測試非同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E6%8A%80%E5%B7%A7"><span class="nav-number">1.2.</span> <span class="nav-text">測試技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A0%90%E5%85%88%E6%8F%90%E4%BE%9B%E8%B3%87%E6%96%99"><span class="nav-number">1.2.1.</span> <span class="nav-text">預先提供資料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E5%85%A7%E5%AE%B9%E6%9C%89%E5%8C%85%E5%90%AB%E5%AF%84%E4%BF%A1%EF%BC%8C%E8%A9%B2%E5%A6%82%E4%BD%95%E6%8E%92%E9%99%A4"><span class="nav-number">1.2.2.</span> <span class="nav-text">測試內容有包含寄信，該如何排除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%B6%E5%A4%9A%E5%80%8B%E6%B8%AC%E8%A9%A6%E9%83%BD%E8%88%87%E8%B3%87%E6%96%99%E5%BA%AB%E7%9B%B8%E4%BA%92%E6%9C%89%E9%97%9C%E8%81%AF%EF%BC%8C%E9%81%87%E5%88%B0%E8%A1%9D%E7%AA%81%E8%A9%B2%E5%A6%82%E4%BD%95%E8%99%95%E7%90%86%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">當多個測試都與資料庫相互有關聯，遇到衝突該如何處理？</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-02 22:32:33" itemprop="dateModified" datetime="2021-06-02T22:32:33+08:00">2021-06-02</time>
+        <time title="Modified: 2021-06-05 00:56:09" itemprop="dateModified" datetime="2021-06-05T00:56:09+08:00">2021-06-05</time>
       </span>
 
   
@@ -268,8 +268,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <h2 id="測試非同步"><a href="#測試非同步" class="headerlink" title="測試非同步"></a>測試非同步</h2><p>有兩種模式，推薦較為彈性的async方式</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加入done函數，當完成時呼叫</span></span><br><span class="line">test(<span class="string">&#x27;Should add two numbers&#x27;</span>, <span class="function">(<span class="params">done</span>) =&gt;</span> &#123;</span><br><span class="line">  add(<span class="number">2</span>, <span class="number">3</span>).then(<span class="function">(<span class="params">sum</span>) =&gt;</span> &#123;</span><br><span class="line">    expect(sum).toBe(<span class="number">5</span>);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//使用async、await</span></span><br><span class="line">test(<span class="string">&#x27;Should add two numbers async/await&#x27;</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> sum = <span class="keyword">await</span> add(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">  expect(sum).toBe(<span class="number">3</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="測試技巧"><a href="#測試技巧" class="headerlink" title="測試技巧"></a>測試技巧</h2><p>有些api需要預先有資料可以使用jest提供的beforeEach預先加入一筆資料</p>
+<h2 id="測試技巧"><a href="#測試技巧" class="headerlink" title="測試技巧"></a>測試技巧</h2><h3 id="預先提供資料"><a href="#預先提供資料" class="headerlink" title="預先提供資料"></a>預先提供資料</h3><p>有些api需要預先有資料可以使用jest提供的beforeEach預先加入一筆資料</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">beforeEach(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="comment">//將所有資料刪除</span></span><br><span class="line">  <span class="keyword">await</span> User.deleteMany();</span><br><span class="line">  <span class="comment">//預先加入一筆帳號資料，後續需要登入才能測試的api就可以直接使用</span></span><br><span class="line">  <span class="keyword">await</span> <span class="keyword">new</span> User(userOne).save();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="測試內容有包含寄信，該如何排除"><a href="#測試內容有包含寄信，該如何排除" class="headerlink" title="測試內容有包含寄信，該如何排除"></a>測試內容有包含寄信，該如何排除</h3><p>在tests資料夾內新增對應的資料夾與檔案，並寫上空物件讓jest覆蓋原先物件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> sgMail = <span class="built_in">require</span>(<span class="string">&#x27;@sendgrid/mail&#x27;</span>);</span><br><span class="line">sgMail.send()</span><br></pre></td></tr></table></figure>
+
+<h2 id="當多個測試都與資料庫相互有關聯，遇到衝突該如何處理？"><a href="#當多個測試都與資料庫相互有關聯，遇到衝突該如何處理？" class="headerlink" title="當多個測試都與資料庫相互有關聯，遇到衝突該如何處理？"></a>當多個測試都與資料庫相互有關聯，遇到衝突該如何處理？</h2><p>可以在npm所要執行的test多新增語法–runInBand，會變成依序執行，就不會衝突到了</p>
+<blockquote>
+<p>jest –watch –runInBand</p>
+</blockquote>
+
     </div>
 
     

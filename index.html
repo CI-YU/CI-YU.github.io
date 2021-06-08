@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-08 23:34:39" itemprop="dateModified" datetime="2021-06-08T23:34:39+08:00">2021-06-08</time>
+        <time title="Modified: 2021-06-08 23:50:21" itemprop="dateModified" datetime="2021-06-08T23:50:21+08:00">2021-06-08</time>
       </span>
 
   
@@ -264,12 +264,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="Server與client如何傳遞資料"><a href="#Server與client如何傳遞資料" class="headerlink" title="Server與client如何傳遞資料"></a>Server與client如何傳遞資料</h2><p>Server(emit) &gt; client(receive) &gt; countUpdated<br>client(emit) &gt; server(receive) &gt; increment</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//server.js</span></span><br><span class="line"><span class="comment">//簡單區分使用io時為全部使用者都接收，使用socket時為單一使用者接收</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">io.on(<span class="string">&#x27;connection&#x27;</span>, <span class="function">(<span class="params">socket</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//使用者連線成功後將countUpdated事件傳給client</span></span><br><span class="line">  <span class="comment">//改為io.emit的話，會把事件傳遞給所有已連線使用者</span></span><br><span class="line">  socket.emit(<span class="string">&#x27;countUpdated&#x27;</span>, count);</span><br><span class="line">  <span class="comment">//increment事件被觸發時啟動</span></span><br><span class="line">  socket.on(<span class="string">&#x27;increment&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//數字+1  </span></span><br><span class="line">    count++;</span><br><span class="line">    <span class="comment">//將事件傳遞給所有已連線使用者</span></span><br><span class="line">    io.emit(<span class="string">&#x27;countUpdated&#x27;</span>, count);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//client.js</span></span><br><span class="line"><span class="comment">//與server連線</span></span><br><span class="line"><span class="keyword">const</span> socket = io();</span><br><span class="line"><span class="comment">//持續接收server的countUpdated事件</span></span><br><span class="line">socket.on(<span class="string">&#x27;countUpdated&#x27;</span>, <span class="function">(<span class="params">count</span>) =&gt;</span> &#123;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//每次觸發都會將increment事件傳遞給server</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&#x27;#increment&#x27;</span>).addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  socket.emit(<span class="string">&#x27;increment&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="發送訊息給自身以外的對象"><a href="#發送訊息給自身以外的對象" class="headerlink" title="發送訊息給自身以外的對象"></a>發送訊息給自身以外的對象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socket.broadcast.emit(<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="指定特定房間發送"><a href="#指定特定房間發送" class="headerlink" title="指定特定房間發送"></a>指定特定房間發送</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socket.to(room).emit(<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
+<ul>
+<li>socket.emit<br>發送給自己</li>
+<li>io.emit<br>發送給所有人</li>
+<li>socket.broadcast.emit<br>發送給除了自己以外的人</li>
+<li>io.to.emit<br>發送給特定房間的所有人</li>
+<li>socket.broadcast.to.emit<br>發送給特定房間除了自己以外的人</li>
+</ul>
 
       
     </div>

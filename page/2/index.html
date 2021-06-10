@@ -166,7 +166,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -204,6 +204,128 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/11/The-Complete-Node-js-Developer-Course-3rd-Edition-%E7%AD%86%E8%A8%981/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="bill huang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨手筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/11/The-Complete-Node-js-Developer-Course-3rd-Edition-%E7%AD%86%E8%A8%981/" class="post-title-link" itemprop="url">The Complete Node.js Developer Course(3rd Edition) 筆記1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-04-11 20:13:05" itemprop="dateCreated datePublished" datetime="2021-04-11T20:13:05+08:00">2021-04-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-06-02 00:01:01" itemprop="dateModified" datetime="2021-06-02T00:01:01+08:00">2021-06-02</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Node-API"><a href="#Node-API" class="headerlink" title="Node API"></a>Node API</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//寫入檔案</span></span><br><span class="line">fs.writeFileSync(<span class="string">&quot;FileName&quot;</span>, <span class="string">&quot;content&quot;</span>);</span><br><span class="line"><span class="comment">//加入文字</span></span><br><span class="line">fs.appendFileSunc(<span class="string">&quot;File&quot;</span>, <span class="string">&quot;content&quot;</span>);</span><br><span class="line"></span><br><span class="line">process.argv; <span class="comment">// 回傳輸入參數陣列 第一個為執行node的路徑 第二個為正在被執行的js檔案路徑 第三個為所輸入參數</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="NPM-Tools"><a href="#NPM-Tools" class="headerlink" title="NPM Tools"></a>NPM Tools</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://yargs.js.org/">yargs</a><br>可以自訂命令列工具，建立更複雜的命令列</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/validator">validator</a><br>可以做許多驗證</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/jsonwebtoken">jsonwebtoken</a><br>專門做JsonWebToken</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/bcryptjs">bcryptjs</a><br>密碼雜湊函式</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/multer">multer</a><br>上傳檔案</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/sharp">sharp</a><br>壓縮圖片、轉圖片格式</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/env-cmd">env-cmd</a><br>用於使用env文件中的環境執行命令。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/jest">jest</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/supertest">supertest</a><br>幫助測試http的工具<br>test code</p>
+<h2 id="Node-debug"><a href="#Node-debug" class="headerlink" title="Node debug"></a>Node debug</h2></li>
+<li><p>console.log</p>
+</li>
+<li><p>debugger</p>
+<blockquote>
+<p>使用上，需要在 terminal 輸入 node inspect 才可以使用</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="39-and-40"><a href="#39-and-40" class="headerlink" title="39 and 40"></a>39 and 40</h2><p>當函示進入callback err時 解構要提供他們預設，不然會跳錯誤</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getcode(address, <span class="function">(<span class="params">err, &#123; latitude, longitude, location &#125; = &#123;&#125;</span>) =&gt;</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="nodemon-e"><a href="#nodemon-e" class="headerlink" title="nodemon -e"></a>nodemon -e</h2><p>當文件不會因為hbs副檔名存檔而重置時可以使用</p>
+<blockquote>
+<p>nodemon app.js -e js,hbs</p>
+</blockquote>
+<h2 id="hbs模板"><a href="#hbs模板" class="headerlink" title="hbs模板"></a>hbs模板</h2><p>使用組件</p>
+<blockquote>
+<p>“&gt; partials”放到雙大括弧內</p>
+</blockquote>
+<p>使用資料key</p>
+<blockquote>
+<p>“The Complete Node.js Developer Course(3rd Edition) 筆記1“放到雙大括弧內</p>
+</blockquote>
+<h2 id="error-page為什麼要放在最後面"><a href="#error-page為什麼要放在最後面" class="headerlink" title="error page為什麼要放在最後面"></a>error page為什麼要放在最後面</h2><p>因為nodejs是單步執行，所以router會從最上面開始讀取，當都沒有配對到時，才會進入error page</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&quot;*&quot;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    res.send(<span class="string">&quot;404 page&quot;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">\\*為萬用字元</span><br></pre></td></tr></table></figure>
+
+<h2 id="How-to-use-Fetch-APIs"><a href="#How-to-use-Fetch-APIs" class="headerlink" title="How to use Fetch APIs"></a>How to use Fetch APIs</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fecth(<span class="string">&quot;url&quot;</span>).then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;</span><br><span class="line">  response.json().then(<span class="function">(<span class="params">data</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">.json()為fecth輸出類型,包含下列幾種</span><br><span class="line">text()</span><br><span class="line">blob()</span><br><span class="line">formData()</span><br><span class="line">arrayBuffer()</span><br></pre></td></tr></table></figure>
+<h2 id="form"><a href="#form" class="headerlink" title="form"></a>form</h2><p>當表單加入submit事件後，每點擊一次按鈕，會面會閃爍，造成使用者體驗不佳的問題，這時候可以使用</p>
+<blockquote>
+<p> e.preventDefault();<br>消除默認行為</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -882,86 +1004,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>查看是否有下載到images</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker search   <span class="comment">//搜尋有哪些images</span></span><br><span class="line">docker pull     <span class="comment">//下載到本地端</span></span><br><span class="line">docker images   <span class="comment">//顯示本地端有哪些images</span></span><br><span class="line">docker run      <span class="comment">//執行images</span></span><br><span class="line">docker ps       <span class="comment">//顯示images執行了哪些container</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/13/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%9Dnginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="bill huang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隨手筆記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/09/13/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%9Dnginx/" class="post-title-link" itemprop="url">使用docker安裝nginx</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-09-13 00:22:10" itemprop="dateCreated datePublished" datetime="2020-09-13T00:22:10+08:00">2020-09-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-24 22:52:18" itemprop="dateModified" datetime="2021-03-24T22:52:18+08:00">2021-03-24</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="install-nginx"><a href="#install-nginx" class="headerlink" title="install nginx"></a>install nginx</h1><h2 id="取得最新版印象檔"><a href="#取得最新版印象檔" class="headerlink" title="取得最新版印象檔"></a>取得最新版印象檔</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx:latest</span><br></pre></td></tr></table></figure>
-
-<h2 id="查看是否安裝成功"><a href="#查看是否安裝成功" class="headerlink" title="查看是否安裝成功"></a>查看是否安裝成功</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/13/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%9Dnginx/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 

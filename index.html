@@ -236,10 +236,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-06-14 16:16:19 / Modified: 18:01:20" itemprop="dateCreated datePublished" datetime="2021-06-14T16:16:19+08:00">2021-06-14</time>
+      <time title="Created: 2021-06-14 16:16:19" itemprop="dateCreated datePublished" datetime="2021-06-14T16:16:19+08:00">2021-06-14</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-06-15 00:04:31" itemprop="dateModified" datetime="2021-06-15T00:04:31+08:00">2021-06-15</time>
+      </span>
 
   
 </div>
@@ -276,6 +282,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 </li>
 </ul>
+<h2 id="建立分支"><a href="#建立分支" class="headerlink" title="建立分支"></a>建立分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 建立名為develop的分支</span><br><span class="line">git branch develop</span><br><span class="line"># 查看所有分支</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<h2 id="切換分支"><a href="#切換分支" class="headerlink" title="切換分支"></a>切換分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 切換到develop分支</span><br><span class="line">git checkout develop</span><br><span class="line"># 建立br1分支，同時切換到br1分支</span><br><span class="line">git checkout -b br1</span><br></pre></td></tr></table></figure>
+<h2 id="刪除分支"><a href="#刪除分支" class="headerlink" title="刪除分支"></a>刪除分支</h2><ul>
+<li>不能刪除當下所在分支</li>
+<li>分支還沒被合併無法被刪除<ul>
+<li>改為-D可以強制刪除尚未合併的分支<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 刪除br1分支</span><br><span class="line">git branch -d br1</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="什麼情況會建立分支"><a href="#什麼情況會建立分支" class="headerlink" title="什麼情況會建立分支"></a>什麼情況會建立分支</h2><ul>
+<li>多人開發</li>
+<li>新功能開發</li>
+<li>分支規矩分為<ul>
+<li>git flow</li>
+<li>github flow</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用預設的vi編輯器"><a href="#使用預設的vi編輯器" class="headerlink" title="使用預設的vi編輯器"></a>使用預設的vi編輯器</h2><p>有兩種模式命令模式與編輯模式<br>剛進入時會是命令模式<br>:q 跳拖vi編輯器<br>i 進去編輯模式，可以輸入文字，完成後想退出按下esc<br>:w 寫入<br>vi 要修改的檔案</p>
 
       
     </div>

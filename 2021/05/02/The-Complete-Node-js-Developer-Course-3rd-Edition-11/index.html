@@ -30,10 +30,12 @@
 <meta property="og:site_name" content="隨手筆記">
 <meta property="og:description" content="mongoosemongoose實際上也是在使用mongodb這個函式庫">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/19286751/121845642-555d0200-cd18-11eb-971d-ed25b759a089.png">
 <meta property="article:published_time" content="2021-05-02T15:42:53.000Z">
-<meta property="article:modified_time" content="2021-05-23T12:35:19.088Z">
+<meta property="article:modified_time" content="2021-06-14T05:58:34.656Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/19286751/121845642-555d0200-cd18-11eb-971d-ed25b759a089.png">
 
 
 <link rel="canonical" href="http://yoursite.com/2021/05/02/The-Complete-Node-js-Developer-Course-3rd-Edition-11/">
@@ -250,7 +252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-23 20:35:19" itemprop="dateModified" datetime="2021-05-23T20:35:19+08:00">2021-05-23</time>
+        <time title="Modified: 2021-06-14 13:58:34" itemprop="dateModified" datetime="2021-06-14T13:58:34+08:00">2021-06-14</time>
       </span>
 
   
@@ -272,6 +274,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <h2 id="async-await"><a href="#async-await" class="headerlink" title="async await"></a>async await</h2><p>在使用非同步語法時，可以提升可讀性</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      resolve(a + b);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> doWork = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> sum = <span class="keyword">await</span> add(<span class="number">2</span>,<span class="number">5</span>); <span class="comment">//等到add執行完，才會繼續</span></span><br><span class="line">  <span class="keyword">const</span> sum2 = <span class="keyword">await</span> add(sum,<span class="number">5</span>);<span class="comment">//等到add執行完，才會繼續</span></span><br><span class="line">  <span class="keyword">return</span> sum2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doWork().then(<span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<img width="903" alt="Screen Shot 2021-06-14 at 1 54 36 PM" src="https://user-images.githubusercontent.com/19286751/121845642-555d0200-cd18-11eb-971d-ed25b759a089.png">
+
 <p>重點總結<br>mongoose操作<br>postman操作<br>promise改async await<br>express router操作</p>
 
     </div>

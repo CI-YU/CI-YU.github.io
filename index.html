@@ -238,7 +238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-06-14 16:16:19 / Modified: 17:24:56" itemprop="dateCreated datePublished" datetime="2021-06-14T16:16:19+08:00">2021-06-14</time>
+      <time title="Created: 2021-06-14 16:16:19 / Modified: 18:01:20" itemprop="dateCreated datePublished" datetime="2021-06-14T16:16:19+08:00">2021-06-14</time>
     </span>
 
   
@@ -266,9 +266,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>常見的版控系統<ul>
 <li>Git </li>
 <li>Mercurial<h2 id="第一次使用Git必要設定"><a href="#第一次使用Git必要設定" class="headerlink" title="第一次使用Git必要設定"></a>第一次使用Git必要設定</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 初始設定</span><br><span class="line">git config --global user.email 輸入email</span><br><span class="line">git config --global user.name 輸入名稱&quot;</span><br><span class="line"></span><br><span class="line"># 如何檢查</span><br><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-<h2 id="如何加入版控"><a href="#如何加入版控" class="headerlink" title="如何加入版控"></a>如何加入版控</h2>在要做版控的目錄底下執行初始化<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h2 id="加入版控"><a href="#加入版控" class="headerlink" title="加入版控"></a>加入版控</h2>在要做版控的目錄底下執行初始化<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 <h2 id="執行版控"><a href="#執行版控" class="headerlink" title="執行版控"></a>執行版控</h2>每次變更後都需要執行兩步驟add與commit<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># .為全部都加入的意思</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;替這次合併加入註解&quot;</span><br><span class="line"># 此次合併的作者就會是這台電腦初始設定所提供的姓名跟信箱</span><br></pre></td></tr></table></figure>
-<h2 id="查看版控"><a href="#查看版控" class="headerlink" title="查看版控"></a>查看版控</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看commit的所有結果</span><br><span class="line">git log</span><br><span class="line"># 查看尚未被add或是尚未被commit的檔案</span><br><span class="line">git status</span><br></pre></td></tr></table></figure></li>
+<h2 id="查看版控"><a href="#查看版控" class="headerlink" title="查看版控"></a>查看版控</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看commit的所有結果</span><br><span class="line">git log</span><br><span class="line"># 查看尚未被add或是尚未被commit的檔案</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h2 id="取消此次add"><a href="#取消此次add" class="headerlink" title="取消此次add"></a>取消此次add</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 改變檔案的狀態 將原先已經add的檔案改回尚未被add的狀態，沒有加檔名代表所有都要取消此次add</span><br><span class="line"># 將staged改為unstage</span><br><span class="line">git reset HEAD 檔名</span><br></pre></td></tr></table></figure>
+<h2 id="將檔案回覆至最新版本"><a href="#將檔案回覆至最新版本" class="headerlink" title="將檔案回覆至最新版本"></a>將檔案回覆至最新版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- 檔名</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>

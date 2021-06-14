@@ -23,20 +23,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="toolsdevtools google 擴充套件用途：debug vue注意事項：需使用沒壓縮的vue檔案，nuxt使用的指令為 npm run dev才能進行除錯 vue 3用途：vue emmet vetur用途：syntax highlighting、Snippet、auto completion、emmet、Formatting nuxt 目錄架構 assets：專門放需要被 webpa">
+<meta name="description" content="版本管控的種類 集中式版本管控 特定的伺服器才會有完整的版本庫及儲存庫 所有人的版本全部集中放在某台電腦管理 常見的版控系統 TFS     分散式版本管控 團隊中每個人都擁有完整的版本庫或儲存庫 常見的版控系統 Git  Mercurial">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nuxt.js">
-<meta property="og:url" content="http://yoursite.com/2021/03/13/Nuxt-js/index.html">
+<meta property="og:title" content="Git 重點介紹">
+<meta property="og:url" content="http://yoursite.com/2021/06/14/Git-%E9%87%8D%E9%BB%9E%E4%BB%8B%E7%B4%B9/index.html">
 <meta property="og:site_name" content="隨手筆記">
-<meta property="og:description" content="toolsdevtools google 擴充套件用途：debug vue注意事項：需使用沒壓縮的vue檔案，nuxt使用的指令為 npm run dev才能進行除錯 vue 3用途：vue emmet vetur用途：syntax highlighting、Snippet、auto completion、emmet、Formatting nuxt 目錄架構 assets：專門放需要被 webpa">
+<meta property="og:description" content="版本管控的種類 集中式版本管控 特定的伺服器才會有完整的版本庫及儲存庫 所有人的版本全部集中放在某台電腦管理 常見的版控系統 TFS     分散式版本管控 團隊中每個人都擁有完整的版本庫或儲存庫 常見的版控系統 Git  Mercurial">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-03-13T09:31:06.000Z">
-<meta property="article:modified_time" content="2021-03-14T04:22:57.039Z">
+<meta property="article:published_time" content="2021-06-14T08:16:19.000Z">
+<meta property="article:modified_time" content="2021-06-14T08:39:29.199Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://yoursite.com/2021/03/13/Nuxt-js/">
+<link rel="canonical" href="http://yoursite.com/2021/06/14/Git-%E9%87%8D%E9%BB%9E%E4%BB%8B%E7%B4%B9/">
 
 
 <script class="page-configurations">
@@ -48,7 +48,7 @@
     lang   : 'en'
   };
 </script>
-<title>Nuxt.js | 隨手筆記</title>
+<title>Git 重點介紹 | 隨手筆記</title>
   
 
 
@@ -158,7 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tools"><span class="nav-number">1.</span> <span class="nav-text">tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nuxt-%E7%9B%AE%E9%8C%84%E6%9E%B6%E6%A7%8B"><span class="nav-number">2.</span> <span class="nav-text">nuxt 目錄架構</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E7%AE%A1%E6%8E%A7%E7%9A%84%E7%A8%AE%E9%A1%9E"><span class="nav-number">1.</span> <span class="nav-text">版本管控的種類</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -219,7 +219,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/13/Nuxt-js/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/14/Git-%E9%87%8D%E9%BB%9E%E4%BB%8B%E7%B4%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -232,7 +232,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Nuxt.js
+          Git 重點介紹
         </h1>
 
         <div class="post-meta-container">
@@ -242,16 +242,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-03-13 17:31:06" itemprop="dateCreated datePublished" datetime="2021-03-13T17:31:06+08:00">2021-03-13</time>
+      <time title="Created: 2021-06-14 16:16:19 / Modified: 16:39:29" itemprop="dateCreated datePublished" datetime="2021-06-14T16:16:19+08:00">2021-06-14</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-14 12:22:57" itemprop="dateModified" datetime="2021-03-14T12:22:57+08:00">2021-03-14</time>
-      </span>
 
   
 </div>
@@ -263,18 +257,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h2><p>devtools google 擴充套件<br>用途：debug vue<br>注意事項：需使用沒壓縮的vue檔案，nuxt使用的指令為 npm run dev才能進行除錯</p>
-<p>vue 3<br>用途：vue emmet</p>
-<p>vetur<br>用途：syntax highlighting、Snippet、auto completion、<br>emmet、Formatting</p>
-<h2 id="nuxt-目錄架構"><a href="#nuxt-目錄架構" class="headerlink" title="nuxt 目錄架構"></a>nuxt 目錄架構</h2><ul>
-<li>assets：專門放需要被 webpack 打包的資源，例如你的 sass 、 images</li>
-<li>components：頁面的最小單位，就是一般我們做 SPA 會放的元件們</li>
-<li>layouts：頁面版型，例如 navbar、 footer</li>
-<li>middleware：進入任何一個網頁前需要做的驗證函式</li>
-<li>pages：每個頁面放的地方，一個 .vue 就是一個網頁</li>
-<li>plugins：需要注入 Vue instance 的插件，譬如你選擇的 UI framework</li>
-<li>static：靜態資源，不需要被 webpack 打包的資源</li>
-<li>store： Vuex<br>參考資料：<a target="_blank" rel="noopener" href="https://medium.com/@jackercleaninglab/ssr-nuxt-js-%E8%B6%85%E5%85%A5%E9%96%80-84a0823b45ed">https://medium.com/@jackercleaninglab/ssr-nuxt-js-超入門-84a0823b45ed</a></li>
+        <h2 id="版本管控的種類"><a href="#版本管控的種類" class="headerlink" title="版本管控的種類"></a>版本管控的種類</h2><ul>
+<li>集中式版本管控<ul>
+<li>特定的伺服器才會有完整的版本庫及儲存庫</li>
+<li>所有人的版本全部集中放在某台電腦管理</li>
+<li>常見的版控系統<ul>
+<li>TFS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分散式版本管控<ul>
+<li>團隊中每個人都擁有完整的版本庫或儲存庫</li>
+<li>常見的版控系統<ul>
+<li>Git </li>
+<li>Mercurial</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -289,14 +290,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/29/Sequelize/" rel="prev" title="Sequelize">
-                  <i class="fa fa-chevron-left"></i> Sequelize
+                <a href="/2021/06/10/%E8%8F%AF%E7%9B%9B%E9%A0%93%E5%95%86%E5%AD%B8%E9%99%A2%E6%9C%80%E5%8F%97%E6%AD%A1%E8%BF%8E%E7%9A%84%E8%AB%87%E5%88%A4%E8%AA%B2/" rel="prev" title="華盛頓商學院最受歡迎的談判課">
+                  <i class="fa fa-chevron-left"></i> 華盛頓商學院最受歡迎的談判課
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/03/24/Node-js/" rel="next" title="Node.js">
-                  Node.js <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

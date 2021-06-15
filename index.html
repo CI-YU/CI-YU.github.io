@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 00:04:31" itemprop="dateModified" datetime="2021-06-15T00:04:31+08:00">2021-06-15</time>
+        <time title="Modified: 2021-06-15 23:56:15" itemprop="dateModified" datetime="2021-06-15T23:56:15+08:00">2021-06-15</time>
       </span>
 
   
@@ -301,7 +301,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </li>
 </ul>
 <h2 id="使用預設的vi編輯器"><a href="#使用預設的vi編輯器" class="headerlink" title="使用預設的vi編輯器"></a>使用預設的vi編輯器</h2><p>有兩種模式命令模式與編輯模式<br>剛進入時會是命令模式<br>:q 跳拖vi編輯器<br>i 進去編輯模式，可以輸入文字，完成後想退出按下esc<br>:w 寫入<br>vi 要修改的檔案</p>
-
+<h2 id="發生衝突"><a href="#發生衝突" class="headerlink" title="發生衝突"></a>發生衝突</h2><p>當發生衝突當下，有幾種解決方法</p>
+<ul>
+<li>放棄當下的合併，復原到還沒合併的狀態<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --abort</span><br></pre></td></tr></table></figure></li>
+<li>手動修復，與協作對象一同討論後，合併起來</li>
+</ul>
+<h2 id="fast-forward-快轉"><a href="#fast-forward-快轉" class="headerlink" title="fast-forward(快轉)"></a>fast-forward(快轉)</h2><p>當a要合併b，但是b卻比a還要往前一個版本時，a做merge b會直接將b蓋掉，不會產生分支的線圖就稱為快轉。</p>
+<p>為了要使線圖更為完整，會關閉快轉機制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git merge b --no-ff</span><br><span class="line"># no fast-forward的意思</span><br></pre></td></tr></table></figure>
       
     </div>
 

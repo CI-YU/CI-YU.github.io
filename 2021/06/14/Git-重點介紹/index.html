@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="版本管控的種類 集中式版本管控 特定的伺服器才會有完整的版本庫及儲存庫 所有人的版本全部集中放在某台電腦管理 常見的版控系統 TFS     分散式版本管控 團隊中每個人都擁有完整的版本庫或儲存庫 常見的版控系統 Git  Mercurial第一次使用Git必要設定1234567# 初始設定git config --global user.email 輸入emailgit config --glo">
+<meta name="description" content="版本管控的種類 集中式版本管控 特定的伺服器才會有完整的版本庫及儲存庫 所有人的版本全部集中放在某台電腦管理 常見的版控系統 TFS     分散式版本管控 團隊中每個人都擁有完整的版本庫或儲存庫 常見的版控系統 Git  Mercurial">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 重點介紹">
 <meta property="og:url" content="http://yoursite.com/2021/06/14/Git-%E9%87%8D%E9%BB%9E%E4%BB%8B%E7%B4%B9/index.html">
 <meta property="og:site_name" content="隨手筆記">
-<meta property="og:description" content="版本管控的種類 集中式版本管控 特定的伺服器才會有完整的版本庫及儲存庫 所有人的版本全部集中放在某台電腦管理 常見的版控系統 TFS     分散式版本管控 團隊中每個人都擁有完整的版本庫或儲存庫 常見的版控系統 Git  Mercurial第一次使用Git必要設定1234567# 初始設定git config --global user.email 輸入emailgit config --glo">
+<meta property="og:description" content="版本管控的種類 集中式版本管控 特定的伺服器才會有完整的版本庫及儲存庫 所有人的版本全部集中放在某台電腦管理 常見的版控系統 TFS     分散式版本管控 團隊中每個人都擁有完整的版本庫或儲存庫 常見的版控系統 Git  Mercurial">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-14T08:16:19.000Z">
-<meta property="article:modified_time" content="2021-06-16T11:53:01.164Z">
+<meta property="article:modified_time" content="2021-06-16T11:55:29.090Z">
 <meta property="article:author" content="bill huang">
 <meta name="twitter:card" content="summary">
 
@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-16 19:53:01" itemprop="dateModified" datetime="2021-06-16T19:53:01+08:00">2021-06-16</time>
+        <time title="Modified: 2021-06-16 19:55:29" itemprop="dateModified" datetime="2021-06-16T19:55:29+08:00">2021-06-16</time>
       </span>
 
   
@@ -277,7 +277,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>團隊中每個人都擁有完整的版本庫或儲存庫</li>
 <li>常見的版控系統<ul>
 <li>Git </li>
-<li>Mercurial<h2 id="第一次使用Git必要設定"><a href="#第一次使用Git必要設定" class="headerlink" title="第一次使用Git必要設定"></a>第一次使用Git必要設定</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 初始設定</span><br><span class="line">git config --global user.email 輸入email</span><br><span class="line">git config --global user.name 輸入名稱&quot;</span><br><span class="line"></span><br><span class="line"># 如何檢查</span><br><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+<li>Mercurial<span id="more"></span>
+<h2 id="第一次使用Git必要設定"><a href="#第一次使用Git必要設定" class="headerlink" title="第一次使用Git必要設定"></a>第一次使用Git必要設定</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 初始設定</span><br><span class="line">git config --global user.email 輸入email</span><br><span class="line">git config --global user.name 輸入名稱&quot;</span><br><span class="line"></span><br><span class="line"># 如何檢查</span><br><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
 <h2 id="加入版控"><a href="#加入版控" class="headerlink" title="加入版控"></a>加入版控</h2>在要做版控的目錄底下執行初始化<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 <h2 id="執行版控"><a href="#執行版控" class="headerlink" title="執行版控"></a>執行版控</h2>每次變更後都需要執行兩步驟add與commit<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># .為全部都加入的意思</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;替這次合併加入註解&quot;</span><br><span class="line"># 此次合併的作者就會是這台電腦初始設定所提供的姓名跟信箱</span><br></pre></td></tr></table></figure>
 <h2 id="查看版控"><a href="#查看版控" class="headerlink" title="查看版控"></a>查看版控</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看commit的所有結果</span><br><span class="line">git log</span><br><span class="line"># 查看尚未被add或是尚未被commit的檔案</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>

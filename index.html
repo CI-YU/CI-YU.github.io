@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-16 19:53:01" itemprop="dateModified" datetime="2021-06-16T19:53:01+08:00">2021-06-16</time>
+        <time title="Modified: 2021-06-16 19:55:29" itemprop="dateModified" datetime="2021-06-16T19:55:29+08:00">2021-06-16</time>
       </span>
 
   
@@ -271,51 +271,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>團隊中每個人都擁有完整的版本庫或儲存庫</li>
 <li>常見的版控系統<ul>
 <li>Git </li>
-<li>Mercurial<h2 id="第一次使用Git必要設定"><a href="#第一次使用Git必要設定" class="headerlink" title="第一次使用Git必要設定"></a>第一次使用Git必要設定</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 初始設定</span><br><span class="line">git config --global user.email 輸入email</span><br><span class="line">git config --global user.name 輸入名稱&quot;</span><br><span class="line"></span><br><span class="line"># 如何檢查</span><br><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-<h2 id="加入版控"><a href="#加入版控" class="headerlink" title="加入版控"></a>加入版控</h2>在要做版控的目錄底下執行初始化<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<h2 id="執行版控"><a href="#執行版控" class="headerlink" title="執行版控"></a>執行版控</h2>每次變更後都需要執行兩步驟add與commit<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># .為全部都加入的意思</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;替這次合併加入註解&quot;</span><br><span class="line"># 此次合併的作者就會是這台電腦初始設定所提供的姓名跟信箱</span><br></pre></td></tr></table></figure>
-<h2 id="查看版控"><a href="#查看版控" class="headerlink" title="查看版控"></a>查看版控</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看commit的所有結果</span><br><span class="line">git log</span><br><span class="line"># 查看尚未被add或是尚未被commit的檔案</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
-<h2 id="取消此次add"><a href="#取消此次add" class="headerlink" title="取消此次add"></a>取消此次add</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 改變檔案的狀態 將原先已經add的檔案改回尚未被add的狀態，沒有加檔名代表所有都要取消此次add</span><br><span class="line"># 將staged改為unstage</span><br><span class="line">git reset HEAD 檔名</span><br></pre></td></tr></table></figure>
-<h2 id="將檔案回覆至最新版本"><a href="#將檔案回覆至最新版本" class="headerlink" title="將檔案回覆至最新版本"></a>將檔案回覆至最新版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- 檔名</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="建立分支"><a href="#建立分支" class="headerlink" title="建立分支"></a>建立分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 建立名為develop的分支</span><br><span class="line">git branch develop</span><br><span class="line"># 查看所有分支</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
-<h2 id="切換分支"><a href="#切換分支" class="headerlink" title="切換分支"></a>切換分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 切換到develop分支</span><br><span class="line">git checkout develop</span><br><span class="line"># 建立br1分支，同時切換到br1分支</span><br><span class="line">git checkout -b br1</span><br></pre></td></tr></table></figure>
-<h2 id="刪除分支"><a href="#刪除分支" class="headerlink" title="刪除分支"></a>刪除分支</h2><ul>
-<li>不能刪除當下所在分支</li>
-<li>分支還沒被合併無法被刪除<ul>
-<li>改為-D可以強制刪除尚未合併的分支<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 刪除br1分支</span><br><span class="line">git branch -d br1</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h2 id="什麼情況會建立分支"><a href="#什麼情況會建立分支" class="headerlink" title="什麼情況會建立分支"></a>什麼情況會建立分支</h2><ul>
-<li>多人開發</li>
-<li>新功能開發</li>
-<li>分支規矩分為<ul>
-<li>git flow</li>
-<li>github flow</li>
-</ul>
-</li>
-</ul>
-<h2 id="使用預設的vi編輯器"><a href="#使用預設的vi編輯器" class="headerlink" title="使用預設的vi編輯器"></a>使用預設的vi編輯器</h2><p>有兩種模式命令模式與編輯模式<br>剛進入時會是命令模式<br>:q 跳拖vi編輯器<br>i 進去編輯模式，可以輸入文字，完成後想退出按下esc<br>:w 寫入<br>vi 要修改的檔案</p>
-<h2 id="發生衝突"><a href="#發生衝突" class="headerlink" title="發生衝突"></a>發生衝突</h2><p>當發生衝突當下，有幾種解決方法</p>
-<ul>
-<li>放棄當下的合併，復原到還沒合併的狀態<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --abort</span><br></pre></td></tr></table></figure></li>
-<li>手動修復，與協作對象一同討論後，合併起來</li>
-</ul>
-<h2 id="fast-forward-快轉"><a href="#fast-forward-快轉" class="headerlink" title="fast-forward(快轉)"></a>fast-forward(快轉)</h2><p>當a要合併b，但是b卻比a還要往前一個版本時，a做merge b會直接將b蓋掉，不會產生分支的線圖就稱為快轉。</p>
-<ul>
-<li>當develop比main分支還要前面時，為了使分支有出去再回來的效果，會關閉快轉機制<br><a target="_blank" rel="noopener" href="https://user-images.githubusercontent.com/19286751/122213642-bed93e00-cedb-11eb-9a7b-58526e92379a.png">示意圖</a></li>
-<li>當server上有人跟你修改同樣的分支，pull下來並不需要有出去又回來的線圖，就會<code>開啟</code>快轉機制(因為是同樣的分支)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git merge b --no-ff</span><br><span class="line"># no fast-forward的意思</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h2><p> 實際上等同於git fetch + git merge</p>
-<ul>
-<li>git fetch 是將遠端儲存庫下載下來</li>
-</ul>
-
+<li>Mercurial
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/14/Git-%E9%87%8D%E9%BB%9E%E4%BB%8B%E7%B4%B9/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
